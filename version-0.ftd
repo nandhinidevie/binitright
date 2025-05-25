@@ -1,0 +1,161 @@
+
+-- bin-game:
+
+
+-- component bin-game:
+
+-- ds.page: Bin It Right
+align-content: center
+margin: $ds.spaces.vertical-gap.zero
+
+-- ftd.text: Bin it right
+role: $inherited.types.heading-hero
+color: $inherited.colors.text-strong
+id: title
+
+-- ftd.row:
+align-content: top-center
+id: timer-container
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+margin-bottom.px: 18
+margin-top.px: 40
+color: #
+
+-- ftd.image:
+id: timer-icon
+src: $assets.files.assets.timer.svg
+width.fixed.px: 80
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ftd.text: 5sec
+role: $inherited.types.copy-large
+style: bold
+margin-top.px: 12
+margin-left.px: -36
+color: $inherited.colors.text
+id: timer-text
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- end: ftd.row
+
+-- ftd.column:
+id: game-container
+width: fill-container
+align-content: center
+spacing.fixed.px: 20
+css: [$assets.files.assets.style.css]
+js: $assets.files.assets.timer.js
+
+-- ftd.image:
+src: https://i.postimg.cc/vB4syWm4/banana-1.png
+id: waste-image
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ftd.column:
+id: choose-bin-btn
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ds.primary-button: Choose Bin
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px if { ftd.device != "mobile" }: 34
+align-content: center
+js: $assets.files.assets.timer.js
+id: bins-container
+css: [$assets.files.assets.style.css]
+
+-- ftd.image:
+classes: bin
+id: green-bin
+css: [$assets.files.assets.style.css]
+js: $assets.files.assets.timer.js
+src: $assets.files.assets.green-bin.svg
+width.fixed.percent: 13
+width.fixed.percent if { ftd.device == "mobile" }: 30
+
+-- ftd.image:
+classes: bin
+id: blue-bin
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+src: $assets.files.assets.blue-bin.svg
+width.fixed.percent: 13
+width.fixed.percent if { ftd.device == "mobile" }: 30
+
+-- ftd.image:
+classes: bin
+id: black-bin
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+src: $assets.files.assets.black-bin.svg
+width.fixed.percent: 13
+width.fixed.percent if { ftd.device == "mobile" }: 30
+
+-- end: ftd.row
+
+-- ftd.column:
+id: message
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- end: ftd.column
+
+-- ftd.column:
+id: result-modal
+classes: modal
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ftd.column:
+classes: modal-content
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ftd.text: 👎
+id: result-message-1
+
+-- ftd.text: Result
+id: result-message
+role: $ds.types.copy-large
+
+-- ftd.text: Result Para
+id: para
+role: $ds.types.copy-regular
+
+-- ftd.column:
+id: play-again-btn
+classes: play-again-btn
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ftd.text: Continue Playing
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: try-again-btn
+id: try-again-btn
+js: $assets.files.assets.timer.js
+css: [$assets.files.assets.style.css]
+
+-- ftd.text: Try Again
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ds.page
+
+-- end: bin-game

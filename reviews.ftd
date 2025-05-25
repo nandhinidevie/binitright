@@ -1,0 +1,121 @@
+-- components.page: Bin It Right - Reviews
+
+-- ds.column:
+width.fixed.px: 700
+width if { ftd.device == "mobile"}: fill-container
+spacing if { ftd.device != "mobile"}: $ds.spaces.vertical-gap.extra-large
+
+-- ds.heading-large: Bin It Right - Reviews
+align: center
+
+-- ds.image:
+src: https://i.postimg.cc/pV3gCp0t/image-32.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/fRN141n2/image-33.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/3JpzcY60/image-34.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/vZtkGXGQ/image-35.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/cJ1jCYJf/image-36.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/PxPRzjYx/image-37.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/vmPKVB1k/image-38.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/K8xppLBC/image-39.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/50TksRSm/image-40.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/L5PQw3yF/image-41.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/G3Tf4bbg/image-42.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/vHRN9CBY/image-43.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/hP930Mz9/image-44.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/zG7tsBkv/image-45.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/433Lsg85/image-46.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/q7Zm75Sd/image-47.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/XJGsBg6B/image-48.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/9F6JRkWd/image.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- ds.image:
+src: https://i.postimg.cc/bdcnVQ5M/image.png
+radius: $ds.radius.medium
+border: $ds.borders.uniform.small
+
+-- end: ds.column
+
+-- ds.heading-small: Thanks, you guys.🥹🥹🥹
+if: { ftd.device == "desktop"}
+
+-- ds.copy-regular: 
+if: { ftd.device == "mobile"}
+
+Thanks, you guys. 🥹🥹🥹
+
+-- ds.primary-button: Play Game
+link: https://nandhini.in/bin-it-right/
+
+-- end: components.page
+
+

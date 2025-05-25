@@ -1,0 +1,280 @@
+-- import: fastn/processors as pr
+-- import: bin-it-right.fifthtry.site/components/record as rd
+;; -- import: bin-it-right.fifthtry.site/font
+
+-- integer $expanded-tile: 0
+-- integer $review-tile: 0
+
+-- string list $selected-item-list:
+
+-- integer $current-slide: 1
+
+-- string $selected-item: Type of Roles Predefined 
+
+-- boolean $show-options: false
+
+-- ftd.image-src site-logo: $assets.files.assets.logo.svg
+
+-- pr.sitemap-data sitemap:
+$processor$: pr.sitemap
+
+
+
+
+
+
+
+-- component page:
+optional caption title:
+ftd.image-src site-logo: $site-logo
+pr.toc-item list toc: $sitemap.toc
+pr.toc-item list sections: $sitemap.sections
+children children:
+
+-- ds.page: $page.title
+inset: $ds.spaces.inset-square.zero
+margin: $ds.spaces.vertical-gap.zero
+
+-- lets-ga.setup:
+
+-- ds.section-column:
+align-content: top-left
+inset: $ds.spaces.inset-square.zero
+;; inset: $ds.spaces.inset-wide.medium-zero
+;; inset: $ds.spaces.inset-wide.large-zero
+;; inset: $ds.spaces.inset-tall.zero-medium
+margin: $ds.spaces.vertical-gap.zero
+
+/-- ds.header:
+sections: $page.sections
+site-logo: $page.site-logo
+
+-- ds.column:
+content: $page.children
+inset: $ds.spaces.inset-wide.medium-zero
+margin: $ds.spaces.vertical-gap.zero
+
+-- end: ds.column
+
+-- footer:
+
+-- end: ds.section-column
+
+-- end: ds.page
+
+-- end: page
+
+
+
+
+
+
+
+-- component rustic:
+optional caption title:
+body body: 
+ftd.image-src left-logo: $assets.files.assets.left-quote.svg
+ftd.image-src right-logo: $assets.files.assets.right-quote.svg
+
+-- ftd.column:
+margin-top.px: 24
+margin-bottom.px: 24
+align-self: center
+width: fill-container
+
+-- ftd.image:
+src: $rustic.left-logo
+height.fixed.px: 69
+width.fixed.px: 69
+anchor: parent
+top.px: -12
+left.px if { ftd.device == "mobile" }: 0
+left.px: 0
+z-index: 0
+
+-- ftd.column:
+align-self: center
+padding-vertical.px: 8
+padding-horizontal.px: 8
+max-width.fixed.percent if { ftd.device == "desktop" }: 90
+z-index: 1
+
+-- ftd.text:
+color: $inherited.colors.text
+role: $inherited.types.heading-small
+padding-horizontal.px: 32
+margin-top.px: 16
+margin-bottom.px: 16
+text-align: center
+margin-left.px if { ftd.device == "mobile" }: 32
+margin-right.px if { ftd.device == "mobile" }: 32
+
+$rustic.body
+
+-- ftd.text: $rustic.title
+if: { rustic.title != NULL }
+align-self: center
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+padding-horizontal.px: 32
+
+-- end: ftd.column
+
+-- ftd.image:
+src: $rustic.right-logo
+height.fixed.px: 69
+width.fixed.px: 69
+anchor: parent
+right.px: 0
+bottom.px: 0
+
+-- end: ftd.column
+
+-- end: rustic
+
+
+
+
+-- component footer:
+boolean $footer: false
+
+-- ftd.column:
+width: fill-container
+;; background.image: $bg-image
+
+-- ftd.desktop:
+
+-- ds.section-column:
+align-content: center
+margin: $ds.spaces.vertical-gap.medium
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.space-between
+
+
+-- ftd.row:
+if: { ftd.device != "mobile"}
+spacing.fixed.px: 32
+align-content: center
+padding-right.px: 100
+
+
+-- ds.heading-tiny: [Bin It Right for kids](/bin-it-right/version-0/)
+align: center
+
+-- ds.heading-tiny: [Bin It Right for adults](/wework/)
+align: center
+
+-- end: ftd.row
+
+-- end: ds.row
+
+-- ds.row:
+
+-- ftd.image:
+src: $assets.files.assets.linkedin-mobile.svg
+width.fixed.px: 28
+link: https://www.linkedin.com/in/nandhini-devi-elumalai/
+
+-- ftd.image:
+src: $assets.files.assets.email.svg
+width.fixed.px: 31
+link:mailto: work@nandhini.in
+
+-- end: ds.row
+
+-- ds.copy-small: ©2025 Nandhini. All Rights Reserved.
+
+-- end: ds.section-column
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ds.section-column:
+align-content: center
+
+-- ds.row:
+
+-- ftd.image:
+src: $assets.files.assets.linkedin-mobile.svg
+width.fixed.px: 28
+link: https://www.linkedin.com/in/nandhini-devi-elumalai/
+
+-- ftd.image:
+src: $assets.files.assets.email.svg
+width.fixed.px: 28
+link: mailto: work@nandhini.in
+
+
+-- end: ds.row
+
+-- ds.copy-small: ©2025 Nandhini. All Rights Reserved.
+
+-- end: ds.section-column
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: footer
+
+
+
+
+-- component typo:
+optional caption title:
+optional body body:
+boolean underline: true
+ftd.resizing width: hug-content
+
+-- ds.column:
+align-content: left
+inset: $ds.spaces.inset-square.zero
+
+-- ftd.text: $typo.title
+if: { typo.title != NULL }
+color: $ds.colors.text-strong
+role: $inherited.types.heading-medium
+border-bottom-width.px if { typo.underline }: 1
+border-color if { typo.underline }: $inherited.colors.border
+width if { typo.underline }: fill-container
+
+-- ds.copy-regular:
+if: { typo.body != NULL }
+style: light
+width if { typo.underline }: fill-container
+
+$typo.body
+
+-- end: ds.column
+
+-- end: typo
+
+
+
+
+-- component typo-small:
+optional caption title:
+optional body body:
+
+-- ds.column:
+inset: $ds.spaces.inset-square.zero
+align-content: left
+;; spacing: $ds.spaces.vertical-gap.extra-small
+
+-- ftd.text: $typo-small.title
+if: { typo-small.title != NULL }
+color: $ds.colors.text-strong
+role: $inherited.types.heading-small
+
+-- ds.copy-regular:
+if: { typo-small.body != NULL }
+style: light
+
+$typo-small.body
+
+-- end: ds.column
+
+-- end: typo-small
+

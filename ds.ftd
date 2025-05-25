@@ -1,0 +1,21 @@
+-- import: bin-it-right.fifthtry.site/components/header as _
+export: header
+
+-- import: design-system.fifthtry.site
+export: site-header, site-footer, tag, copyright, floating-banner, borders, button, icon-button, primary-button, image, video, toggle-image-link, secondary-button, circle-text-button, phosphor-icon-button, inline-row, footer-link, copyright-text, page-widths, header-link, page, hero, heading-hero, heading-large, heading-medium, heading-small, heading-tiny, copy-large, copy-regular, copy-small, fine-print, source-code, link, section-row, section-column, column, element-radius, radius, row, flush, gap, hv, spaces, border-data, border-bottom, alert, container, text-input, danger-button, checkbox, link-button, floater, copy-to-clipboard-text, copy-to-clipboard-icon, label-text, package-info, storybook, code, shadow, expander
+exposing: page-widths
+
+-- page-widths widths:
+regular.px: 1200
+narrow.px: 1000
+wide.px: 1400
+
+-- import: bin-it-right.fifthtry.site/themecolor
+-- import: mulish-typography.fifthtry.site
+
+-- ftd.color-scheme colors: $themecolor.main
+-- ftd.type-data types: $mulish-typography.types
+-- ftd.type-data types: $inter-typography.types
+
+-- ftd.image-src site-logo: $assets.files.assets.logo.svg
+

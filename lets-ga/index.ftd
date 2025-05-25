@@ -1,0 +1,8 @@
+-- import: lets-ga.fifthtry.site
+export: *
+
+;; Get your Measurement ID from google analytics dashboard or,
+;; Follow https://support.google.com/analytics/answer/9304153 to create new Measurement ID
+;; Measurement ID are prefixed with G-
+;; Example: G-XXXXXXXXXX
+-- string measurement-id: G-2ZLKCJ9ZX1

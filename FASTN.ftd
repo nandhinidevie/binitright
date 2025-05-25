@@ -1,0 +1,29 @@
+-- import: fastn
+
+-- fastn.package: bin-it-right.fifthtry.site
+favicon: https://i.postimg.cc/Y9fmbt9W/my-profile-picture-440-x-440-px-6.png
+
+-- fastn.dependency: design-system.fifthtry.site
+provided-via: bin-it-right.fifthtry.site/ds
+
+-- fastn.dependency: lets-ga.fifthtry.site
+provided-via: bin-it-right.fifthtry.site/lets-ga
+
+-- fastn.dependency: doc-site.fifthtry.site
+-- fastn.dependency: bling.fifthtry.site
+
+-- fastn.dependency: admonitions.fifthtry.site as cbox
+
+-- fastn.dependency: midnight-rush-cs.fifthtry.site
+-- fastn.dependency: biro-script-plus-font.fifthtry.site
+-- fastn.dependency: mulish-typography.fifthtry.site
+-- fastn.dependency: mulish-font.fifthtry.site
+
+-- fastn.auto-import: lets-ga.fifthtry.site as lets-ga
+-- fastn.auto-import: bin-it-right.fifthtry.site/assets
+-- fastn.auto-import: doc-site.fifthtry.site
+-- fastn.auto-import: bin-it-right.fifthtry.site/ds
+-- fastn.auto-import: cbox
+-- fastn.auto-import: bin-it-right.fifthtry.site/components
+-- fastn.auto-import: bin-it-right.fifthtry.site/components/cs as cs
+-- fastn.auto-import: bin-it-right.fifthtry.site/components/record as rd

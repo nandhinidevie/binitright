@@ -1,0 +1,134 @@
+todo
+
+- add more waste items
+- sound effect for winning
+- fireworks animation/ .css
+- sound effect for correct answer
+- responsive
+- fix time left (x seconds) on the well done screen
+
+
+Next Update:
+
+See flow 2 in this link: https://www.figma.com/proto/00Oo8t0bSOQ9y0QKedkipb/Projects--Digital-Marketing-and-Copywriting?node-id=2491-417&p=f&t=XyboPqljvSN7XBWp-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2491%3A417&show-proto-sidebar=1
+
+Gameplay Mechanics
+1️⃣ Game Start
+When the player starts the game, a 60-second timer begins.
+
+The first waste item appears with bin options.
+
+The player selects the correct bin to dispose of the waste item.
+
+2️⃣ Correct Answer
+The game moves to the next waste item instantly.
+
+The number of cards left is displayed at the top (e.g., "5 items left").
+
+3️⃣ Incorrect Answer
+If the player selects the wrong bin, a message appears:
+
+❌ "Oops! That’s not the right bin. Try again!"
+
+The timer pauses while this message is displayed.
+
+The player clicks a "Try Again" button, and the same waste item reappears.
+
+The timer resumes once the player is back in the game.
+
+4️⃣ Running Out of Time
+If the 60-second timer reaches 0, the player gets a message:
+
+⏳ "Time’s up! Try again"
+
+The game restarts from the beginning, and the timer resets to 60 seconds.
+
+5️⃣ Completing All Cards Within 60 Seconds
+If the player sorts all waste items correctly within 60 seconds, they see a final message:
+
+🎉 "Awesome job! You sorted all the waste in 1 minute.
+If 1 minute is all it takes, why not do it every day?
+If you don’t, your mixed waste spends 500 years polluting our land, air, and water."
+
+CTA Buttons:
+
+"End Game" → Exits the game.
+
+"Share Game" → Copies the game link to clipboard.
+
+UI Elements & Features
+1️⃣ Timer Display:
+
+Positioned at the top, counting down from 60 seconds.
+
+2️⃣ Progress Tracker:
+
+Shows the number of cards left (e.g., "5 items left").
+
+3️⃣ Pause Timer Mechanism:
+
+Timer stops when an incorrect answer message appears.
+
+Timer resumes once the player clicks "Try Again".
+
+4️⃣ Game Restart Mechanism:
+
+If time runs out, the game resets with a fresh 60-second timer.
+
+Player must reattempt sorting from the first waste item.
+
+
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bin it right Game for Hasiru Dala Innovations
+
+UI: similar to [daily dump website](https://www.dailydump.org/pages/home-composters)
+
+
+How It Works:
+Player sees an image of a waste item (e.g., banana peel, plastic bottle, glass jar).
+
+A "Choose Bin" button appears → Clicking it opens a selection of bins (e.g., Wet Waste, Dry Waste, Recyclable, Hazardous).
+
+A 5-second timer starts counting down → The user must select the correct bin before time runs out.
+
+Visual Feedback:
+✅ If correct: a message appears: “It took you 5 seconds to segregate waste. It takes 500 years if you don’t.” Or a variation like “You did it in 5 seconds! That’s 500 years less waste in landfills.”  or waste segregation takes five seconds, but if you don’t do it, it takes 500 years for that mistake to disappear.
+
+❌ If wrong: A warning message pops up (e.g., "Oops! That doesn’t go there. Try again!").
+
+
+
+
+
+
+Next Iteration: Series of Cards with a Landfill Visual
+
+Instead of a single round, make it a series of 5-10 waste items the user must sort.
+A landfill image on the side shrinks as the user correctly sorts the waste.
+If they get one wrong, the landfill grows slightly to show the impact of poor waste management. OR if they get one wrong, the landfill doesn't shrink and a message pops, "Oops! That doesn’t go there. Try again!"
+
+After all the rounds, the landfill is completely shrunk with a message like:
+“Congrats! You did a great job keeping our planet clean”
+

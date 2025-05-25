@@ -1,0 +1,199 @@
+
+-- ds.page: bin it right
+theme-switcher if { ftd.device != "mobile" }: true
+fastn-badge if { ftd.device == "mobile" }: false
+
+-- bin-game:
+
+-- end: ds.page
+
+
+-- component bin-game:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 16
+background.solid: $ds.colors.background.base
+overflow-y: hidden
+padding.px: 24
+height.fixed.vh: 100
+
+-- ftd.row:
+id: timer-container
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.timer.svg
+width.fixed.px: 54
+
+-- ftd.text: 60sec
+role: $inherited.types.copy-small
+style: bold
+anchor: parent
+top.px: 26
+top.px if { ftd.device == "mobile" }: 30
+left.px: 24
+width: fill-container
+color: $inherited.colors.text-strong
+id: timer-text
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+
+-- end: ftd.row
+
+-- ftd.column:
+id: progress-tracker
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+
+-- end: ftd.column
+
+-- ftd.image:
+src: https://i.postimg.cc/g095P8mG/wework-sugar.png
+id: waste-image
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 34
+spacing.fixed.px if { ftd.device == "mobile" }: 18
+padding-horizontal.px: 24
+align-content: center
+js: $assets.files.assets.timer-wework.js
+id: bin-container
+css: [$assets.files.assets.style-2.css]
+
+-- ftd.column:
+classes: bin
+cursor: pointer
+id: ww-green
+css: [$assets.files.assets.style-2.css]
+js: $assets.files.assets.timer-wework.js
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.ww-green.svg
+width.fixed.px: 136
+width.fixed.percent if { ftd.device == "mobile" }: 100
+
+-- ftd.image:
+src: $assets.files.assets.green-title.svg
+width.fixed.px: 100
+width.fixed.px if { ftd.device == "mobile" }: 80
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: bin
+cursor: pointer
+id: ww-blue
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.ww-blue.svg
+width.fixed.px: 136
+width.fixed.percent if { ftd.device == "mobile" }: 100
+
+-- ftd.image:
+src: $assets.files.assets.blue-title.svg
+width.fixed.px: 100
+width.fixed.px if { ftd.device == "mobile" }: 80
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: bin
+cursor: pointer
+id: ww-red
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.ww-red.svg
+width.fixed.px: 136
+width.fixed.percent if { ftd.device == "mobile" }: 100
+
+-- ftd.image:
+src: $assets.files.assets.red-title.svg
+width.fixed.px: 100
+width.fixed.px if { ftd.device == "mobile" }: 80
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+width: fill-container
+id: result-modal
+classes: modal
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+
+-- ftd.text: icon
+id: result-message-1
+classes: modal-icon
+
+-- ftd.text: title
+id: result-title
+classes: modal-title
+
+-- ftd.text: Result
+id: result-body
+classes: modal-body
+
+-- ftd.column:
+id: play-again-btn
+classes: button
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+link: /wework/
+
+-- ftd.text: Play Again
+color: #ffffff
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: button
+id: try-again-btn
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+
+-- ftd.text: Try Again
+color: #ffffff
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: button
+id: share-game-btn
+js: $assets.files.assets.timer-wework.js
+css: [$assets.files.assets.style-2.css]
+
+-- ftd.text: Share
+
+-- end: ftd.column
+
+-- ftd.text: Link copied!
+id: copy-message
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: firework, explosion
+id: celebration
+css: [$assets.files.assets.style-2.css]
+js: $assets.files.assets.timer-wework.js
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: bin-game

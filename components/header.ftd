@@ -1,0 +1,197 @@
+-- import: fastn/processors as pr
+
+
+-- component header:
+optional ftd.image-src site-logo:
+pr.toc-item list sections:
+integer logo-width: 120
+integer logo-height: 44
+boolean $open: false
+
+-- ftd.column:
+width: fill-container
+z-index: 9999999
+
+-- ftd.desktop:
+
+-- ds.section-row:
+align-content: left
+spacing: $ds.spaces.horizontal-gap.space-between
+;; inset: $ds.spaces.inset-tall.zero-medium
+inset: $ds.spaces.inset-square.medium
+margin: $ds.spaces.vertical-gap.zero
+
+-- ftd.image:
+src: $ds.site-logo
+width.fixed.px: 140
+link: /
+
+-- ds.row:
+spacing: $ds.spaces.horizontal-gap.extra-large
+align-content: right
+width: hug-content
+
+-- header-item: $obj.title
+$loop$: $header.sections as $obj
+link: $obj.url
+is-active: $obj.is-active
+
+-- end: ds.row
+
+
+/-- ds.row:
+width: hug-content
+;; spacing: $ds.spaces.horizontal-gap.small
+align-content: right
+
+/-- ds.primary-button: Book a Meeting
+link: /
+
+
+/-- ftd.image: 
+src: $assets.files.assets.meeting.svg
+width.fixed.px: 28
+link: https://calendly.com/talk-nandhini/30min/
+margin-top.px: 4
+
+/-- ftd.image: 
+src: $assets.files.assets.linkedin-mobile.svg
+width.fixed.px: 28
+link: https://www.linkedin.com/in/nandhini-devi-elumalai/
+
+/-- dark-mode-toggle:
+
+/-- end: ds.row
+
+-- end: ds.section-row
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ftd.row:
+width: fill-container
+padding-horizontal.px: 30
+padding-top.px: 16
+padding-bottom.px: 24
+align-content: left
+spacing: space-between
+
+-- ftd.image:
+src: $ds.site-logo
+width.fixed.px: 128
+link: /
+
+/-- ftd.image:
+src: $assets.files.assets.menu.svg
+src if { header.open }: $assets.files.assets.cross.svg
+width.fixed.px: 28
+width.fixed.px if { header.open }: 18
+$on-click$: $ftd.toggle($a = $header.open)
+
+/-- ftd.column:
+if: { header.open }
+align-content: center
+background.solid: $inherited.colors.background.step-2
+spacing.fixed.px: 24
+padding.px: 16
+anchor: parent
+top.px: 78
+width.fixed.percent: 86
+
+/-- header-item: $obj.title
+$loop$: $header.sections as $obj
+link: $obj.url
+is-active: $obj.is-active
+
+/-- dark-mode-toggle:
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: header
+
+
+
+
+
+
+
+
+
+-- component header-item:
+caption title:
+optional ftd.image-src icon:
+optional string link:
+boolean is-active: 
+boolean $hover: false
+
+-- ftd.row:
+width: hug-content
+spacing.fixed.px: 24
+$on-mouse-enter$: $ftd.set-bool($a = $header-item.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $header-item.hover, v = false)
+link: $header-item.link
+align-content: center
+
+-- ds.copy-regular: $header-item.title
+;;link: $header-item.link
+width: hug-content
+style if { header-item.is-active }: bold
+align: center
+color: $inherited.colors.text-strong
+color if { header-item.is-active || header-item.hover }: #e6e50f
+
+/-- ftd.image:
+if: { header-item.hover }
+src: $assets.files.assets.illustration.zig-zag.svg
+width.fixed.px: 120
+anchor: parent
+top.px: 32
+
+-- end: ftd.row
+
+-- end: header-item
+
+
+
+
+
+
+
+
+
+
+-- component dark-mode-toggle:
+
+-- ds.row:
+width: hug-content
+background.solid: $inherited.colors.background.step-2
+inset: $ds.spaces.inset-wide.small
+radius: $ds.radius.large
+	
+		-- ftd.image:
+		src: $assets.files.assets.light-mode.svg
+		$on-click$: $ftd.enable-light-mode()
+		background.solid if { !ftd.dark-mode }: $inherited.colors.background.step-1
+		background.solid: transparent
+		border-radius.px: 100
+        width.fixed.px: 28
+	
+		-- ftd.image:
+		src: $assets.files.assets.dark-mode.svg
+		$on-click$: $ftd.enable-dark-mode()
+		background.solid if { ftd.dark-mode }: $inherited.colors.background.step-1
+		background.solid: transparent
+		border-radius.px: 100
+        width.fixed.px: 22
+
+
+-- end: ds.row
+
+-- end: dark-mode-toggle

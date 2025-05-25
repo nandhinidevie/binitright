@@ -1,0 +1,196 @@
+-- import: bling.fifthtry.site/quote
+
+-- components.page: Bin it right
+
+-- ds.column:
+width.fixed.px: 750
+width if { ftd.device == "mobile"}: fill-container
+spacing: $ds.spaces.vertical-gap.large
+
+-- ds.heading-hero: Bin it right - Waste segregation game
+align: center
+
+-- ds.copy-small: Last updated on March 19th, 2025
+align: center
+
+-- ds.row:
+if: { ftd.device != "mobile" }
+
+-- ds.primary-button: Play game (for kids)
+link: https://binitright.com/version-0/
+
+-- ds.primary-button: Play game (for grown-ups)
+link: https://binitright.com/wework/
+
+-- end: ds.row
+
+-- ds.column:
+if: { ftd.device == "mobile" }
+inset: $ds.spaces.inset-square.zero
+
+-- ds.primary-button: Play game (for kids)
+link: https://binitright.com/version-0/
+
+-- ds.primary-button: Play game (for grown-ups)
+link: https://binitright.com/wework/
+
+-- end: ds.column
+
+-- ds.column:
+width.fixed.px: 750
+width if { ftd.device == "mobile"}: fill-container
+
+-- components.typo: 
+
+India generates 160,000 tonnes of waste every day. Only half (~ 80,000 tonnes per day) of
+the collected waste is actually treated or processed (source: [CPCB](https://cpcb.nic.in/uploads/MSW/MSW_AnnualReport_2020-21.pdf)).
+The rest either piles up in landfills or simply disappears from the
+system, meaning it’s dumped illegally, burned, or lost in our streets,
+rivers, and oceans.
+
+The root cause is **lack of segregation at the source.**
+In cities like Delhi, Mumbai, and Bengaluru, a 
+[large percentage](https://www.hindustantimes.com/cities/delhi-news/waste-sorting-at-home-a-weak-link-in-swachh-bharat-101728240822620.html)
+of households still don’t segregate their waste.
+Instead of composting or recycling, everything gets mixed into 
+a mess that’s impossible to clean up.
+
+Imagine if your street’s wet waste had been turned into compost, 
+enriching soil, producing biogas, or creating liquid fertilizer.
+Instead, it sits in a landfill mixed with plastic, e-waste, and
+sanitary waste. It leaks toxic sludge, pollutes the air, and becomes
+a daily nightmare for those who live nearby. Mostly because you didn’t
+take a few seconds each day to sort it. 
+
+-- components.rustic: 
+
+When we mix waste, we make the problem worse.
+
+-- components.typo:
+
+You’ve probably heard, “Five seconds to put on your seatbelt,
+five paramedics if you don’t.” That’s the thinking behind Bin It Right.
+***Take five seconds to sort your waste, or let it pollute for 500 years.***
+
+-- components.typo: How it works
+
+Bin It Right is a simple game designed to train you to make better waste
+segregation decisions. 
+
+- You see an image of waste.
+- You choose the right bin before time runs out.
+- If you choose incorrectly or the time runs out, you can play again.
+
+The game stores where a player left off and allow them to resume from the same point.
+
+-- components.typo: Why gamify waste segregation?
+
+Because learning through play makes habits stick. Gamification taps into our
+natural instincts of challenge, reward, and repetition to make sorting
+waste second nature. The timer in the game adds urgency, training you
+to make quick decisions. 
+
+-- components.rustic: 
+
+If we can decide which post to like or which 
+story to skip in seconds, we can sort our waste just as fast.
+
+-- components.typo: Keeping it simple and easy
+
+The game is intentionally designed to be simple and easy to play. 
+The goal is to make waste segregation feel effortless, helping people
+learn the habit quickly and integrate it into their daily routines.
+By keeping it easy, we ensure that anyone (regardless of age) can play the game. 
+
+Right now, Bin It Right is an MVP with only 13 common household waste items
+classified into three bins:
+
+🟢Green (Wet Waste) - Food scraps.
+
+🔵Blue (Dry Waste) - Plastic, paper, glass
+
+⚫Black (E-Waste) - Batteries, electronics.
+
+This basic segregation aligns with the ***minimum requirement*** across most
+Indian cities. Properly segregating waste at this level makes it
+easier for municipalities and private waste pickers to handle further
+sorting, recycling, and disposal efficiently.
+
+Note: India’s Solid Waste Management Rules, 2016, emphasize waste
+segregation into biodegradable, non-biodegradable, and hazardous waste.
+However, color codes of bins vary by municipality.
+
+-- components.typo: My ask: Partnerships + Feedback
+
+-- components.typo-small: 1) Spread the Word
+
+Share this game with friends, family, schools and colleges. Use this link to share the game: https://binitright.com/
+
+-- components.typo-small: 2) Brand Collaborations
+
+- Rebrand it as your own - This game is **white-labeled,** meaning you can rebrand it as your own and use
+  it for educational campaigns. You can add your logo, colors, and messaging
+  to align with your organization's identity.
+- Tailor it for different audiences - You can add locally relevant or region-specific 
+  waste items and bin categories.
+- Adjust the gameplay - You can also add more waste categories, modify the difficulty level, time limits, and feedback messages
+  to match your campaign goals.
+- Local language support – The game can be translated into regional languages to reach a wider audience.
+  
+-- components.typo-small: 3) Bug Reports & Suggestions
+
+Found a glitch? Have an idea to make the game even better? [***Connect with me.***](https://calendly.com/talk-nandhini/30min/)
+
+-- components.typo: Special Thanks
+
+This game was built using [FifthTry](https://www.fifthtry.com/) and [`fastn.`](https://fastn.com/)
+Huge shoutout to [**Meenu Kumari**](https://www.linkedin.com/in/meenu-kumari0317/) for 
+bringing this concept to life, and a big thank you to [**Siddhant**](https://www.linkedin.com/in/siddhantcodes/)
+for his support.
+
+-- components.typo: Next steps for Bin It Right
+
+-- components.typo-small: 1. Expand Use Cases
+
+Showcase the game’s versatility by building tailored versions for different audiences:
+   
+   - Europe: binitright.com/eu/ (with region-specific waste categories)
+   - India: binitright.com/in/ (with language options)
+   - Kindergarten: binitright.com/kindergarten/ (simplified for young learners)
+   - Hospitals: binitright.com/hospitals/ (medical waste sorting) and many more.
+
+If you'd like to create a version for your organization, institution, or business, reach out at work@nandhini.in
+
+-- components.typo-small: 2. Track Engagement
+
+Collect data on the number of players and gather feedback through game ratings.
+
+-- components.typo-small: 3. Introduce Game Levels
+
+Add Level 2 or difficulty modes (Easy / Medium / Hard) for a more interactive learning experience
+
+-- components.typo: Grateful for your support 🙏
+
+I truly appreciate everyone who took the time to play the game and share their reviews. 
+If you'd like to see what others are saying, you can read the reviews [here.](/reviews/)
+
+-- components.typo: Let’s build more climate games
+
+Have an idea for another climate-related game? [***Let’s collaborate.***](https://calendly.com/talk-nandhini/30min/)
+
+-- components.typo: Learn about waste management
+
+1) https://greensutra.in/waste-segregation-all-you-need-to-know/
+2) https://shorturl.at/Fo8Du
+3) https://cpcb.nic.in/uploads/MSW/
+MSW_AnnualReport_2020-21.pdf
+4) https://shorturl.at/xBqsH
+5) https://shorturl.at/uVKyM
+6) https://shorturl.at/oyBft
+
+-- ds.primary-button: Play Game
+link: https://binitright.com/
+
+-- end: ds.column
+
+-- end: components.page
