@@ -142,10 +142,6 @@ function updateImage() {
     const imageEl = document.getElementById('waste-image');
     if (currentIndex < images.length) {
         imageEl.src = images[currentIndex].src;
-        imageEl.setAttribute('draggable', true);
-        imageEl.ondragstart = function (event) {
-            event.dataTransfer.setData("text/plain", currentIndex);
-        };
         document.getElementById('progress-tracker').innerText = `${images.length - currentIndex - 1} items left`;
     } else {
         let timeTaken = 60 - timeRemaining;
@@ -192,106 +188,8 @@ document.querySelectorAll('.bin').forEach(bin => {
             }
         }
     });
-
-    bin.addEventListener('dragover', event => event.preventDefault());
-
-    bin.addEventListener('drop', function (event) {
-        event.preventDefault();
-        if (!isPaused) {
-            const correctBins = images[currentIndex].correctBin;
-            if (correctBins.includes(this.id)) {
-                currentIndex++;
-                playTrimmedAudio('assets/correct-ans.mp3');
-                updateImage();
-            } else {
-                shakeImage();
-                playWrongAnswerSound();
-                showModal("👎", "Oops!", "That doesn’t go there.", true, false);
-            }
-        }
-    });
 });
 
-// 🎯 MOBILE DRAG SUPPORT (Touch events)
-let draggedElement = null;
-let touchOffsetX = 0;
-let touchOffsetY = 0;
-
-const imageEl = document.getElementById('waste-image');
-
-imageEl.addEventListener('touchstart', (e) => {
-    if (isPaused) return;
-    const touch = e.touches[0];
-    draggedElement = imageEl;
-    const rect = imageEl.getBoundingClientRect();
-    touchOffsetX = touch.clientX - rect.left;
-    touchOffsetY = touch.clientY - rect.top;
-    
-    imageEl.style.position = 'fixed';
-    imageEl.style.zIndex = '1000';
-    imageEl.style.pointerEvents = 'none'; // Prevent other touch interactions during drag
-}, { passive: false });
-
-imageEl.addEventListener('touchmove', (e) => {
-    if (!draggedElement) return;
-    e.preventDefault();
-    const touch = e.touches[0];
-    const left = touch.clientX - touchOffsetX;
-    const top = touch.clientY - touchOffsetY;
-
-    imageEl.style.left = `${left}px`;
-    imageEl.style.top = `${top}px`;
-}, { passive: false });
-
-imageEl.addEventListener('touchend', (e) => {
-    if (!draggedElement) return;
-    
-    const bins = document.querySelectorAll('.bin');
-    const imageRect = imageEl.getBoundingClientRect();
-    let droppedOnBin = false;
-
-    bins.forEach(bin => {
-        const binRect = bin.getBoundingClientRect();
-
-        // Check overlap
-        const overlap = !(
-            binRect.right < imageRect.left ||
-            binRect.left > imageRect.right ||
-            binRect.bottom < imageRect.top ||
-            binRect.top > imageRect.bottom
-        );
-
-        if (overlap && !droppedOnBin) {
-            droppedOnBin = true;
-            const correctBins = images[currentIndex].correctBin;
-            if (correctBins.includes(bin.id)) {
-                currentIndex++;
-                playTrimmedAudio('assets/correct-ans.mp3');
-                resetImagePosition();
-                updateImage();
-            } else {
-                shakeImage();
-                playWrongAnswerSound();
-                showModal("👎", "Oops!", "That doesn’t go there.", true, false);
-                resetImagePosition();
-            }
-        }
-    });
-
-    if (!droppedOnBin) {
-        resetImagePosition();
-    }
-
-    draggedElement = null;
-}, { passive: false });
-
-function resetImagePosition() {
-    imageEl.style.position = '';
-    imageEl.style.left = '';
-    imageEl.style.top = '';
-    imageEl.style.zIndex = '';
-    imageEl.style.pointerEvents = '';
-}
 
 // Buttons
 document.getElementById('try-again-btn').addEventListener('click', () => {
