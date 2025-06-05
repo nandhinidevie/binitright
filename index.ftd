@@ -16,13 +16,13 @@ align: center
 -- ds.row:
 if: { ftd.device != "mobile" }
 
--- ds.primary-button: Play game (for kids)
+-- ds.primary-button: Play game (Easy)
 link: https://binitright.com/version-0/
 
--- ds.primary-button: Play game (for students)
+-- ds.primary-button: Play game (Medium)
 link: https://binitright.com/blu-green-blr-2025/
 
--- ds.primary-button: Play game (for grown-ups)
+-- ds.primary-button: Play game (Hard)
 link: https://binitright.com/wework/
 
 -- end: ds.row

@@ -11,22 +11,21 @@ let fireworksActive = true;
 
 const images = [
     { src: "https://i.postimg.cc/hvzqbwsW-/ww-plastic-drink.png", correctBin: ["ww-blue"] },
+    { src: "https://i.postimg.cc/vB4syWm4/banana-1.png", correctBin: ["ww-green"] },
     { src: "https://i.postimg.cc/MG5xW1H4/ww-juice-box.png", correctBin: ["ww-blue"] },
     { src: "https://i.postimg.cc/sxdt7Jnw/ww-wrapper-1-1.png", correctBin: ["ww-blue"] },
     { src: "https://i.postimg.cc/25cDgHCp/orange-1.png", correctBin: ["ww-green"] },
     { src: "https://i.postimg.cc/qBCTZXYY/can-1.png", correctBin: ["ww-blue"] },
     { src: "https://i.postimg.cc/wxFSs1ck/apple.png", correctBin: ["ww-green"] },
     { src: "https://i.postimg.cc/jdHrRqR4/paper-1.png", correctBin: ["ww-blue"] },
+    { src: "https://i.postimg.cc/VvQww4pV/bin-it-right-10-1.png", correctBin: ["ww-green"] },
     { src: "https://i.postimg.cc/XJbT9Fzs/snack-cover.png", correctBin: ["ww-blue"] },
     { src: "https://i.postimg.cc/nzNthCs0/pizza-box-1.png", correctBin: ["ww-blue"] },
-    { src: "https://i.postimg.cc/vB4syWm4/banana-1.png", correctBin: ["ww-green"] },
-    { src: "https://i.postimg.cc/VvQww4pV/bin-it-right-10-1.png", correctBin: ["ww-green"] },
     { src: "https://i.postimg.cc/bJ2P44Cn/bin-it-right-9-1.png", correctBin: ["ww-green"] },
     { src: "https://i.postimg.cc/25yr71n2/bin-it-right-8-1.png", correctBin: ["ww-blue"] },
     { src: "https://i.postimg.cc/BnMJFTPj/hard-plastic-cover.png", correctBin: ["ww-blue"] },
-    { src: "https://i.postimg.cc/8CYDKTHD/glass-bottle.png", correctBin: ["ww-blue"] },
-    { src: "https://i.postimg.cc/YCppjn0c/paperbag.png", correctBin: ["ww-blue"] },
     { src: "https://i.postimg.cc/dtRssPqm/watermelon.png", correctBin: ["ww-green"] },
+    { src: "https://i.postimg.cc/YCppjn0c/paperbag.png", correctBin: ["ww-blue"] },
 ];
 
 function playWrongAnswerSound() {
@@ -147,7 +146,7 @@ function updateImage() {
         launchFireworks();
         setTimeout(() => fireworksActive = false, 5000);
         showModal("🎉", `Well done! You sorted the waste in ${timeTaken} secs.`, 
-            `If ${timeTaken} seconds is all it takes, why not do it every day at WeWork too?`, false, true);
+            `If ${timeTaken} seconds is all it takes, why not do it every day? If you don’t, your unsorted waste spends 500 years polluting our air, water, and land.`, false, true);
     }
 }
 
