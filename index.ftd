@@ -19,6 +19,9 @@ if: { ftd.device != "mobile" }
 -- ds.primary-button: Play game (for kids)
 link: https://binitright.com/version-0/
 
+-- ds.primary-button: Play game (for students)
+link: https://binitright.com/blu-green-blr-2025/
+
 -- ds.primary-button: Play game (for grown-ups)
 link: https://binitright.com/wework/
 
@@ -30,6 +33,9 @@ inset: $ds.spaces.inset-square.zero
 
 -- ds.primary-button: Play game (for kids)
 link: https://binitright.com/version-0/
+
+-- ds.primary-button: Play game (for students)
+link: https://binitright.com/blu-green-blr-2025/
 
 -- ds.primary-button: Play game (for grown-ups)
 link: https://binitright.com/wework/
