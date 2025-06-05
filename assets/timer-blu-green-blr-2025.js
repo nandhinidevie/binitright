@@ -1,4 +1,4 @@
-let timeRemaining = 45;
+let timeRemaining = 30;
 let timerInterval;
 let currentIndex = 0;
 let isPaused = false;
@@ -38,7 +38,7 @@ function startGame() {
     document.getElementById('progress-tracker').style.display = 'block';
     startTime = Date.now();
     currentIndex = 0;
-    timeRemaining = 45;
+    timeRemaining = 30;
     isPaused = false;
     updateImage();
     startTimer();
@@ -138,7 +138,7 @@ function updateImage() {
         imageEl.src = images[currentIndex].src;
         document.getElementById('progress-tracker').innerText = `${images.length - currentIndex - 1} items left`;
     } else {
-        let timeTaken = 45 - timeRemaining;
+        let timeTaken = 30 - timeRemaining;
         tickingAudio.pause();
         tickingAudio.currentTime = 0;
         celebrationAudio.play();

@@ -18,7 +18,7 @@ align: center
 -- ds.copy-regular:
 align: center
 
-Click the correct bin for the waste item shown in the image. You have 45 seconds to sort all waste items.
+Click the correct bin for the waste item shown in the image. You have 30 seconds to sort all waste items.
 
 -- ds.primary-button: Start Game
 link: blu-green-blr-2025/game/

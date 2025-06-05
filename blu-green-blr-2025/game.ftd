@@ -30,7 +30,7 @@ align-content: center
 src: $assets.files.assets.timer.svg
 width.fixed.px: 54
 
--- ftd.text: 45sec
+-- ftd.text: 30sec
 role: $inherited.types.copy-small
 style: bold
 anchor: parent
@@ -53,7 +53,7 @@ css: [$assets.files.assets.style-2.css]
 -- end: ftd.column
 
 -- ftd.image:
-src: https://i.postimg.cc/g095P8mG/blu-green-blr-2025-sugar.png
+src: https://i.postimg.cc/hvzqbwsW-/ww-plastic-drink.png
 id: waste-image
 js: $assets.files.assets.timer-blu-green-blr-2025.js
 css: [$assets.files.assets.style-2.css]
