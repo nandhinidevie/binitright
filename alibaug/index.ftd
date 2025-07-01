@@ -1,0 +1,135 @@
+-- lets-ga.setup:
+-- boolean $mr: true
+-- boolean $en: false
+
+
+-- ds.page: Bin It Right
+align-content: center
+theme-switcher: true
+margin: $ds.spaces.vertical-gap.zero
+
+-- ftd.row:
+if: { ftd.device != "mobile" }
+classes: language-switcher
+id: languageSwitcher
+js: $assets.files.assets.alibaug.timer.js
+css: [$assets.files.assets.alibaug.style.css]
+spacing.fixed.px: 12
+anchor: parent
+top.px: 24
+right.px: 24
+
+-- ftd.text: मराठी
+$on-click$: $ftd.set-bool($a = $mr, v = true)
+$on-click$: $ftd.set-bool($a = $en, v = false)
+background.solid if { mr }: #007bff
+color if { mr }: white
+border-color if { mr }: #0056b3
+padding-vertical.px: 6
+padding-horizontal.px: 10
+cursor: pointer
+border-width.px: 2
+border-color: #007bff
+border-radius.px: 20
+background.solid: white
+color: #007bff
+
+-- ftd.text: English
+$on-click$: $ftd.set-bool($a = $en, v = true)
+$on-click$: $ftd.set-bool($a = $mr, v = false)
+background.solid if { en }: #007bff
+color if { en }: white
+border-color if { en }: #0056b3
+padding-vertical.px: 6
+padding-horizontal.px: 10
+cursor: pointer
+border-width.px: 2
+border-color: #007bff
+border-radius.px: 20
+background.solid: white
+color: #007bff
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+classes: language-switcher
+id: languageSwitcher
+js: $assets.files.assets.alibaug.timer.js
+css: [$assets.files.assets.alibaug.style.css]
+spacing.fixed.px: 6
+anchor: parent
+top.px: 24
+right.px: 24
+align-content: right
+
+-- ftd.text: मराठी
+$on-click$: $ftd.set-bool($a = $mr, v = true)
+$on-click$: $ftd.set-bool($a = $en, v = false)
+background.solid if { mr }: #007bff
+color if { mr }: white
+border-color if { mr }: #0056b3
+padding-vertical.px: 6
+padding-horizontal.px: 10
+cursor: pointer
+border-width.px: 2
+border-color: #007bff
+border-radius.px: 20
+background.solid: white
+color: #007bff
+
+-- ftd.text: English
+$on-click$: $ftd.set-bool($a = $en, v = true)
+$on-click$: $ftd.set-bool($a = $mr, v = false)
+background.solid if { en }: #007bff
+color if { en }: white
+border-color if { en }: #0056b3
+padding-vertical.px: 6
+padding-horizontal.px: 10
+cursor: pointer
+border-width.px: 2
+border-color: #007bff
+border-radius.px: 20
+background.solid: white
+color: #007bff
+
+-- end: ftd.column
+
+-- ftd.column:
+margin-vertical.px: 100
+width.fixed.px if { ftd.device != "mobile" }: 450
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+
+-- ds.heading-large: बरोबर बिनमध्ये भरा.
+if: { mr }
+align: center
+
+-- ds.heading-large: Bin it right
+if: { en }
+align: center
+
+-- ds.copy-regular:
+if: { mr }
+align: center
+
+चित्रात दाखवलेल्या कचराकुंडीसाठी योग्य डब्यावर क्लिक करा. सर्व कचराकुंडी क्रमवारी लावण्यासाठी तुमच्याकडे ६० सेकंद आहेत.
+
+-- ds.copy-regular:
+if: { en }
+align: center
+
+Click the correct bin for the waste item shown in the image. You have 60 seconds to sort all waste items.
+
+-- ds.primary-button: गेम सुरू करा
+if: { mr }
+link: alibaug/game/
+
+-- ds.primary-button: Start Game
+if: { en }
+link: alibaug/game/
+
+-- end: ftd.column
+
+-- end: ds.page
