@@ -1,0 +1,320 @@
+
+-- ds.page: bin it right
+theme-switcher: false
+fastn-badge if { ftd.device == "mobile" }: false
+inset: $ds.spaces.inset-square.zero
+
+-- bin-game:
+
+-- end: ds.page
+
+
+-- component bin-game:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 16
+background.solid: #041723
+overflow-y: hidden
+padding.px: 24
+height.fixed.vh: 100
+
+-- ftd.row:
+if: { ftd.device != "mobile" }
+classes: language-switcher
+id: languageSwitcher
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+spacing.fixed.px: 12
+anchor: parent
+top.px: 24
+right.px: 24
+
+-- ftd.text: मराठी
+id: lang-marathi
+classes: lang-option, active
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.text: English
+classes: lang-option
+id: lang-english
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+classes: language-switcher
+id: languageSwitcher
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+spacing.fixed.px: 6
+anchor: parent
+top.px: 24
+right.px: 24
+align-content: right
+
+-- ftd.text: मराठी
+id: lang-marathi
+classes: lang-option, active
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.text: English
+classes: lang-option
+id: lang-english
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- end: ftd.column
+
+-- ftd.row:
+id: timer-container
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.timer.svg
+width.fixed.px: 54
+
+-- ftd.text: 60sec
+role: $inherited.types.copy-small
+style: bold
+anchor: parent
+top.px: 26
+top.px if { ftd.device == "mobile" }: 30
+left.px: 24
+width: fill-container
+color: #ffffff
+id: timer-text
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- end: ftd.row
+
+-- ftd.column:
+id: progress-tracker
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+color: #ffffff
+
+-- end: ftd.column
+
+-- ftd.image:
+src: https://i.postimg.cc/vmM2QPc9/apple.png
+id: waste-image
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.column:
+id: image-name
+classes: image-name
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+margin-bottom.px: 24
+color: #ffffff
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 34
+spacing.fixed.px if { ftd.device == "mobile" }: 18
+padding-horizontal.px: 24
+align-content: center
+js: $assets.files.assets.alibaug.level-1.js
+id: bin-container
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.column:
+classes: bin
+cursor: pointer
+id: ww-blue
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.alibaug-dry-blue.png
+width.fixed.px: 136
+width.fixed.percent if { ftd.device == "mobile" }: 100
+
+-- ftd.column:
+id: dry-waste
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+background.solid: #164EA5
+padding-horizontal.px: 10
+padding-vertical.px: 2
+border-radius.px: 8
+color: #ffffff
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: bin
+cursor: pointer
+id: ww-green
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.alibaug-wet-green.png
+width.fixed.px: 136
+width.fixed.percent if { ftd.device == "mobile" }: 100
+
+-- ftd.column:
+id: wet-waste
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+background.solid: #1C5B33
+padding-horizontal.px: 10
+padding-vertical.px: 2
+border-radius.px: 8
+color: #ffffff
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: bin
+cursor: pointer
+id: ww-grey
+css: [$assets.files.assets.alibaug.style.css]
+js: $assets.files.assets.alibaug.level-1.js
+align-content: center
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.alibaug-reject-grey.png
+width.fixed.px: 136
+width.fixed.percent if { ftd.device == "mobile" }: 100
+
+-- ftd.column:
+id: reject-waste
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+background.solid: #DBD4CD
+padding-horizontal.px: 10
+padding-vertical.px: 2
+border-radius.px: 8
+color: #000000
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.column:
+width: fill-container
+id: result-modal
+classes: modal
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.text: icon
+id: result-message-1
+classes: modal-icon
+
+-- ftd.text: title
+id: result-title
+classes: modal-title
+
+-- ftd.text: Result
+id: result-body
+classes: modal-body
+
+-- ftd.column:
+id: play-again-btn
+classes: button
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+link: /alibaug/
+color: #ffffff
+
+-- ftd.text: Play Again
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: button
+id: try-again-btn
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.text: Try Again
+color: #ffffff
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+align-content: center
+id: level-up-modal
+classes: modal, hidden
+css: [$assets.files.assets.alibaug.style.css]
+js: $assets.files.assets.alibaug.level-1.js
+
+-- ftd.column:
+width: fill-container
+align-content: center
+classes: modal-content
+css: [$assets.files.assets.alibaug.style.css]
+js: $assets.files.assets.alibaug.level-1.js
+
+-- ftd.column:
+id: level-up-message
+css: [$assets.files.assets.alibaug.style.css]
+js: $assets.files.assets.alibaug.level-1.js
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: button
+id: level-up-btn
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.text: Level Up
+color: #ffffff
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: button
+id: share-game-btn
+js: $assets.files.assets.alibaug.level-1.js
+css: [$assets.files.assets.alibaug.style.css]
+
+-- ftd.text: Share
+
+-- end: ftd.column
+
+-- ftd.text: Link copied!
+id: copy-message
+
+-- end: ftd.column
+
+-- ftd.column:
+classes: firework, explosion
+id: celebration
+css: [$assets.files.assets.alibaug.style.css]
+js: $assets.files.assets.alibaug.level-1.js
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: bin-game

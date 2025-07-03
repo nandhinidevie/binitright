@@ -5,8 +5,9 @@
 
 -- ds.page: Bin It Right
 align-content: center
-theme-switcher: true
+theme-switcher: false
 margin: $ds.spaces.vertical-gap.zero
+spacing: $ds.spaces.vertical-gap.zero
 
 -- ftd.row:
 if: { ftd.device != "mobile" }
@@ -22,114 +23,200 @@ right.px: 24
 -- ftd.text: मराठी
 $on-click$: $ftd.set-bool($a = $mr, v = true)
 $on-click$: $ftd.set-bool($a = $en, v = false)
-background.solid if { mr }: #007bff
+background.solid if { mr }: #103e7c
 color if { mr }: white
-border-color if { mr }: #0056b3
+border-color if { mr }: #103e7c
 padding-vertical.px: 6
 padding-horizontal.px: 10
 cursor: pointer
 border-width.px: 2
-border-color: #007bff
+border-color: #103e7c
 border-radius.px: 20
 background.solid: white
-color: #007bff
+color: #103e7c
 
 -- ftd.text: English
 $on-click$: $ftd.set-bool($a = $en, v = true)
 $on-click$: $ftd.set-bool($a = $mr, v = false)
-background.solid if { en }: #007bff
+background.solid if { en }: #103e7c
 color if { en }: white
-border-color if { en }: #0056b3
+border-color if { en }: #103e7c
 padding-vertical.px: 6
 padding-horizontal.px: 10
 cursor: pointer
 border-width.px: 2
-border-color: #007bff
+border-color: #103e7c
 border-radius.px: 20
 background.solid: white
-color: #007bff
+color: #103e7c
 
 -- end: ftd.row
 
--- ftd.column:
+-- ftd.row:
 if: { ftd.device == "mobile" }
 classes: language-switcher
 id: languageSwitcher
 js: $assets.files.assets.alibaug.timer.js
 css: [$assets.files.assets.alibaug.style.css]
 spacing.fixed.px: 6
-anchor: parent
-top.px: 24
-right.px: 24
-align-content: right
+width: fill-container
+align-content: center
+margin-bottom.px: 28
 
 -- ftd.text: मराठी
 $on-click$: $ftd.set-bool($a = $mr, v = true)
 $on-click$: $ftd.set-bool($a = $en, v = false)
-background.solid if { mr }: #007bff
+background.solid if { mr }: #103e7c
 color if { mr }: white
-border-color if { mr }: #0056b3
+border-color if { mr }: #103e7c
 padding-vertical.px: 6
 padding-horizontal.px: 10
 cursor: pointer
 border-width.px: 2
-border-color: #007bff
+border-color: #103e7c
 border-radius.px: 20
 background.solid: white
-color: #007bff
+color: #103e7c
 
 -- ftd.text: English
 $on-click$: $ftd.set-bool($a = $en, v = true)
 $on-click$: $ftd.set-bool($a = $mr, v = false)
-background.solid if { en }: #007bff
+background.solid if { en }: #103e7c
 color if { en }: white
-border-color if { en }: #0056b3
+border-color if { en }: #103e7c
 padding-vertical.px: 6
 padding-horizontal.px: 10
 cursor: pointer
 border-width.px: 2
-border-color: #007bff
+border-color: #103e7c
 border-radius.px: 20
 background.solid: white
-color: #007bff
+color: #103e7c
+
+-- end: ftd.row
+
+-- ds.row:
+wrap: true
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.logos.gac-logo.jpeg
+width.fixed.px: 150	
+width.fixed.px if { ftd.device == "mobile" }: 68	
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.logos.gfi.jpg
+width.fixed.px: 100	
+width.fixed.px if { ftd.device == "mobile" }: 68	
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.logos.aswm.jpg
+width.fixed.px: 250	
+width.fixed.px if { ftd.device == "mobile" }: 68	
+
+-- ftd.image:
+src: $assets.files.assets.alibaug.logos.cmf-logo.jpg
+width.fixed.px: 100	
+width.fixed.px if { ftd.device == "mobile" }: 68	
+
+-- end: ds.row
+
+-- ftd.column:
+if: { mr }
+margin-bottom.px: 50
+margin-top.px: 28
+width.fixed.px if { ftd.device != "mobile" }: 600
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+
+-- ds.heading-hero: बिन इट रिघात
+align: center
+
+-- ftd.column:
+spacing.fixed.px: 24
+align-content: left
+width: hug-content
+shadow: $s
+padding.px: 24
+border-radius.px: 20
+
+-- ds.heading-small: 👀 टाकाऊ वस्तू पहा 
+
+-- ds.heading-small: 👆 योग्य बिनवर टॅप करा
+
+-- ds.heading-small: 🕓 सर्व आयटम ६० सेकंदात क्रमवारी लावा.
+
+-- end: ftd.column
+
+-- ftd.text: पातळी १ सुरू करा
+role: $inherited.types.heading-small
+link: alibaug/level-1/
+background.solid: $inherited.colors.cta-primary.base
+border-radius.px: 12
+padding.px: 10
+color: $inherited.colors.cta-primary.text
+width.fixed.px: 260
+text-align: center
 
 -- end: ftd.column
 
 -- ftd.column:
-margin-vertical.px: 100
+if: { en }
+margin-bottom.px: 50
+margin-top.px: 28
 width.fixed.px if { ftd.device != "mobile" }: 450
 width: fill-container
 spacing.fixed.px: 40
 align-content: center
 
--- ds.heading-large: बरोबर बिनमध्ये भरा.
-if: { mr }
+-- ds.heading-hero: Bin it right
 align: center
 
--- ds.heading-large: Bin it right
-if: { en }
-align: center
+-- ftd.column:
+spacing.fixed.px: 24
+align-content: left
+width: hug-content
+shadow: $s
+padding.px: 24
+border-radius.px: 20
 
--- ds.copy-regular:
-if: { mr }
-align: center
+-- ftd.text: 👀 See the waste item 
+role: $inherited.types.heading-small
 
-चित्रात दाखवलेल्या कचराकुंडीसाठी योग्य डब्यावर क्लिक करा. सर्व कचराकुंडी क्रमवारी लावण्यासाठी तुमच्याकडे ६० सेकंद आहेत.
+-- ftd.text: 👆 Tap the correct bin
+role: $inherited.types.heading-small
 
--- ds.copy-regular:
-if: { en }
-align: center
+-- ftd.text: 🕓 Sort all items in 60 seconds
+role: $inherited.types.heading-small
 
-Click the correct bin for the waste item shown in the image. You have 60 seconds to sort all waste items.
+-- end: ftd.column
 
--- ds.primary-button: गेम सुरू करा
-if: { mr }
-link: alibaug/game/
-
--- ds.primary-button: Start Game
-if: { en }
-link: alibaug/game/
+-- ftd.text: Start Level 1
+role: $inherited.types.heading-small
+link: alibaug/level-1/
+background.solid: $inherited.colors.cta-primary.base
+border-radius.px: 12
+padding.px: 10
+color: $inherited.colors.cta-primary.text
+width.fixed.px: 200
+text-align: center
 
 -- end: ftd.column
 
 -- end: ds.page
+
+
+
+
+
+
+-- ftd.color c:
+dark: #070707
+light: #b3b3b3
+
+-- ftd.shadow s:
+color: $c
+blur.px: 6
+spread.px: 2
+x-offset.px: 0
+y-offset.px: 2
