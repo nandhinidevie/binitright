@@ -12,23 +12,23 @@
 .lang-option {
     padding: 6px 10px;
     cursor: pointer;
-    border: 2px solid #007bff;
+    border: 2px solid #103e7c;
     border-radius: 20px;
     background-color: white;
-    color: #007bff;
+    color: #103e7c;
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 .lang-option:hover {
-    background-color: #007bff;
+    background-color: #103e7c;
     color: white;
     transform: scale(1.05);
 }
 
 .lang-option.active {
-    background-color: #007bff;
+    background-color: #103e7c;
     color: white;
     border-color: #0056b3;
 }
@@ -116,7 +116,7 @@ margin: 10px 0;
 }
 
 .modal-body {
-font-size: 20px;
+font-size: 18px;
 }
 
 .button {
