@@ -7,6 +7,7 @@ let tickingAudio = new Audio("assets/ticking.mp3");
 let timeUpAudio = new Audio("assets/time-up.mp3");
 let correctAnswerAudio = new Audio("assets/correct.mp3");
 let celebrationAudio = new Audio("assets/winning.mp3");
+let correctAnswerTrimmedAudio = new Audio("assets/correct-ans.mp3");
 let fireworksActive = true;
 
 
@@ -139,20 +140,9 @@ function startTimer() {
     }, 1000);
 }
 
-async function playTrimmedAudio(url) {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const response = await fetch(url);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-    const source = audioContext.createBufferSource();
-    source.buffer = audioBuffer;
-    source.connect(audioContext.destination);
-    source.start(0.1);
-
-    if (audioContext.state === 'suspended') {
-        audioContext.resume();
-    }
+function playTrimmedAudio() {
+    correctAnswerTrimmedAudio.currentTime = 0;
+    correctAnswerTrimmedAudio.play();
 }
 
 function createFirework() { /* unchanged */ }
