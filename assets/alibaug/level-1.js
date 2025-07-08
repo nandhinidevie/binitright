@@ -92,12 +92,12 @@ const images = [
     { src: "https://i.postimg.cc/WpXvxkYX/nail.png", correctBin: ["ww-grey"], name: { mr: "नखे", en: "Nail" } },
     { src: "https://i.postimg.cc/qvCHtZJ5/old-cloth.png", correctBin: ["ww-blue"], name: { mr: "जुने कापड", en: "Old Cloth" } },
     { src: "https://i.postimg.cc/pdfNChnQ/onion.png", correctBin: ["ww-green"], name: { mr: "कांदा", en: "Onion" } },
-    { src: "https://i.postimg.cc/ZRHGkGHC/orange.png", correctBin: ["ww-green"], name: { mr: "ऑरेंज", en: "Orange" } },
+    { src: "https://i.postimg.cc/ZRHGkGHC/orange.png", correctBin: ["ww-green"], name: { mr: "संत्र", en: "Orange" } },
     { src: "https://i.postimg.cc/dQWb5KDf/plastic-cover.png", correctBin: ["ww-blue"], name: { mr: "प्लास्टिक कव्हर", en: "Plastic Cover" } },
     { src: "https://i.postimg.cc/5tMTX4kX/sanitary-napkin.png", correctBin: ["ww-grey"], name: { mr: "सॅनिटरी नॅपकिन", en: "Sanitary Napkin" } },
     { src: "https://i.postimg.cc/0jrHTbrB/thermacol.png", correctBin: ["ww-blue"], name: { mr: "थर्माकोल", en: "Thermacol" } },
     { src: "https://i.postimg.cc/652mz2k7/watermelon.png", correctBin: ["ww-green"], name: { mr: "टरबूज", en: "Watermelon" } },
-    { src: "https://i.postimg.cc/dVGScMtw/white-paper.png", correctBin: ["ww-blue"], name: { mr: "श्वेतपत्रिका", en: "White Paper" } },
+    { src: "https://i.postimg.cc/dVGScMtw/white-paper.png", correctBin: ["ww-blue"], name: { mr: "टिशू पेपर", en: "White Paper" } },
  ];
 
 function playWrongAnswerSound() {
