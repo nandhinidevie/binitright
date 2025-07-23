@@ -81,7 +81,7 @@ align-content: center
 src: $assets.files.assets.timer.svg
 width.fixed.px: 54
 
--- ftd.text: 60sec
+-- ftd.text: 45sec
 role: $inherited.types.copy-small
 style: bold
 anchor: parent
