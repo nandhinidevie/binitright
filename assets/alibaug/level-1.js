@@ -1,4 +1,4 @@
-let timeRemaining = 60;
+let timeRemaining = 45;
 let timerInterval;
 let currentIndex = 0;
 let isPaused = false;
@@ -110,7 +110,7 @@ function startGame() {
     document.getElementById('progress-tracker').style.display = 'block';
     startTime = Date.now();
     currentIndex = 0;
-    timeRemaining = 60;
+    timeRemaining = 45;
     isPaused = false;
     updateImage();
     updateLanguageTexts();
@@ -161,7 +161,7 @@ function updateImage() {
         };
         document.getElementById('progress-tracker').innerText = `${Math.max(images.length - currentIndex - 1, 0)} ${languages[currentLanguage].itemsLeft}`;
     } else {
-        let timeTaken = 60 - timeRemaining;
+        let timeTaken = 45 - timeRemaining;
         tickingAudio.pause();
         tickingAudio.currentTime = 0;
         celebrationAudio.play();
