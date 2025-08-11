@@ -129,7 +129,8 @@ width: fill-container
 spacing.fixed.px: 40
 align-content: center
 
--- ds.heading-hero: बिन इट रिघात
+-- ds.heading-hero: बिन इट राइट
+
 align: center
 
 -- ftd.column:
@@ -219,4 +220,5 @@ color: $c
 blur.px: 6
 spread.px: 2
 x-offset.px: 0
+
 y-offset.px: 2
