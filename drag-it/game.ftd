@@ -1,0 +1,134 @@
+-- bin-game:
+
+-- component bin-game:
+
+-- ds.page: Bin It Right
+align-content: center
+margin: $ds.spaces.vertical-gap.zero
+
+-- ftd.column:
+width: fill-container
+align-content: center
+classes: game-box
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.text: Time: 30
+classes: timer
+id: timer
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.column:
+classes: waste-image
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.image:
+src: ""
+id: waste-img
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- end: ftd.column
+
+-- ftd.text: Waste Name
+classes: waste-name
+id: waste-name
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.column:
+width: fill-container
+align-content: center
+classes: step-list
+id: sortable
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- end: ftd.column
+
+-- ftd.text: Check Answer
+classes: btn, disabled
+id: checkBtn
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- end: ftd.column
+
+-- ftd.column:
+align-content: center
+classes: popup
+id: popup
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.column:
+classes: popup-content
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+spacing.fixed.px: 10
+
+-- ftd.text: ⌛
+role: $ds.types.heading-large
+
+-- ftd.text: Time’s up!
+role: $ds.types.heading-large
+color: #103E7C
+
+-- ftd.text: Try Again
+classes: btn
+id: tryAgainBtn
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+id: customModal
+classes: modal
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.column:
+classes: modal-content
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+spacing.fixed.px: 10
+
+-- ftd.column:
+classes: modal-emoji
+id: modalEmoji
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- end: ftd.column
+
+-- ftd.text: Title
+id: modalTitle
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.text: Body
+id: modalMessage
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.column:
+id: modalCloseBtn
+classes: modal-btn
+css: [$assets.files.drag-it.style.css]
+js: $assets.files.drag-it.function.js
+
+-- ftd.text: Close
+
+-- end: ftd.column
+
+-- end: ftd.column
+-- end: ftd.column
+
+-- end: ds.page
+
+-- end: bin-game

@@ -1,0 +1,178 @@
+    .game-box {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .timer {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .waste-image {
+      text-align: center;
+    }
+
+    .waste-image img {
+      width: 120px;
+      height: auto;
+    }
+
+    .waste-name {
+      text-align: center;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .step-item {
+      text-align: center;
+      width: 100%;
+      background: #ffffff;
+      color: #0a2463;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: grab;
+      transition: background 0.3s;
+    }
+
+    .step-item.correct {
+      background: #40c738;
+    }
+
+    .step-item.wrong {
+      background: #f50f0f;
+    }
+
+    .btn {
+      padding: 12px;
+      font-size: 16px;
+      text-align: center;
+      background: #103E7C;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .btn.disabled {
+      background: #aaa;
+      pointer-events: none;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+
+    .popup.show {
+      visibility: visible;
+    }
+
+    .popup-content {
+      width: 500px;
+      background: #D0E3FD;
+      justify-content: center;
+      color: #103E7C;
+      align-items: center;
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      color: black;
+    }
+
+
+
+    /* Modal background */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.6);
+  align-content:  center;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #D0E3FD;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  max-width: 610px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-emoji {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#modalTitle{
+    font-size: 30px;
+    color: #103E7C;
+}
+
+#modalMessage{
+    font-size: 20px;
+    color: #103E7C;
+}
+
+.modal-subtext {
+  font-size: 30px;
+  color: #103E7C;
+  margin-top: 10px;
+}
+
+.modal-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width:  100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-btn:hover {
+  background-color: #45a049;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+

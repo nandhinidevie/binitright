@@ -1,0 +1,28 @@
+-- lets-ga.setup:
+
+-- ds.page: Bin It Right
+align-content: center
+theme-switcher: true
+margin: $ds.spaces.vertical-gap.zero
+
+-- ftd.column:
+margin-vertical.px: 100
+width.fixed.px if { ftd.device != "mobile" }: 450
+width: fill-container
+spacing.fixed.px: 40
+align-content: center
+
+-- ds.heading-large: Bin it right
+align: center
+
+-- ds.copy-regular:
+align: center
+
+Click the correct bin for the waste item shown in the image. You have 60 seconds to sort all waste items.
+
+-- ds.primary-button: Start Game
+link: wework/game/
+
+-- end: ftd.column
+
+-- end: ds.page
