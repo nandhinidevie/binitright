@@ -1,0 +1,73 @@
+
+-- ds.page: bin it right
+theme-switcher: false
+fastn-badge if { ftd.device == "mobile" }: false
+inset: $ds.spaces.inset-square.zero
+background.solid: #ffffff
+align-content: center
+
+-- search:
+
+-- end: ds.page
+
+
+
+
+
+
+
+-- component search:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+spacing.fixed.px: 16
+overflow-y: hidden
+padding.px: 24
+classes: container
+css: [$assets.files.hasiru-dala.style.css]
+
+-- ftd.text: Waste Segregation Helper
+classes: h1
+css: [$assets.files.hasiru-dala.style.css]
+
+-- ftd.column:
+width: fill-container
+classes: search-wrapper
+css: [$assets.files.hasiru-dala.style.css]
+js: $assets.files.hasiru-dala.search.js
+
+-- ftd.text-input:
+classes: search-input
+css: [$assets.files.hasiru-dala.style.css]
+js: $assets.files.hasiru-dala.search.js
+id: searchInput
+placeholder: Type an item e.g. banana, plastic...
+
+-- ftd.column:
+id: searchBtn
+classes: search-btn
+css: [$assets.files.hasiru-dala.style.css]
+js: $assets.files.hasiru-dala.search.js
+
+-- ftd.column:
+classes: search-icon
+css: [$assets.files.hasiru-dala.style.css]
+js: $assets.files.hasiru-dala.search.js
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+id: results
+css: [$assets.files.hasiru-dala.style.css]
+js: $assets.files.hasiru-dala.search.js
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: search
