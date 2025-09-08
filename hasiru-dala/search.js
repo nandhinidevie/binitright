@@ -87,11 +87,12 @@ const wasteDatabase = {
 
       matches.forEach(k => {
         const bin = wasteDatabase[k];
-        if (bin.includes('Wet')) showResult(`"${k}" → ${bin}`, 'green', '🌱');
-        else if (bin.includes('Dry')) showResult(`"${k}" → ${bin}`, 'blue', '📦');
-        else showResult(`"${k}" → ${bin}`, 'red', '🚫');
+        if (bin.includes('Wet')) showResult(`"${k}" → ${bin}`, 'green');
+        else if (bin.includes('Dry')) showResult(`"${k}" → ${bin}`, 'blue');
+        else showResult(`"${k}" → ${bin}`, 'red');
       });
     }
 
     searchBtn.addEventListener('click', checkBin);
+
     input.addEventListener('keydown', e => { if (e.key === 'Enter') checkBin(); });
