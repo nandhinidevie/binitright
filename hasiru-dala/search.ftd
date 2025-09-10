@@ -27,7 +27,7 @@ padding.px: 24
 classes: container
 css: [$assets.files.hasiru-dala.style.css]
 
--- ftd.text: Waste Segregation Helper
+-- ftd.text: Bin Finder
 classes: h1
 css: [$assets.files.hasiru-dala.style.css]
 
