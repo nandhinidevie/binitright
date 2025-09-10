@@ -5,8 +5,20 @@ fastn-badge if { ftd.device == "mobile" }: false
 inset: $ds.spaces.inset-square.zero
 background.solid: #ffffff
 align-content: center
+spacing: $ds.spaces.vertical-gap.space-between
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
+
+-- ftd.row:
+margin-top.px: 24
+
+-- ftd.image:
+src: $assets.files.assets.hdi-logo.svg
+
+-- end: ftd.row
 
 -- search:
+
+-- ds.fine-print: Copyright Good Game Company 2025
 
 -- end: ds.page
 
@@ -18,11 +30,12 @@ align-content: center
 
 -- component search:
 
+
 -- ftd.column:
 width: fill-container
-align-content: center
+;; align-content: center
 spacing.fixed.px: 16
-overflow-y: hidden
+;; overflow-y: hidden
 padding.px: 24
 classes: container
 css: [$assets.files.hasiru-dala.style.css]
@@ -71,3 +84,4 @@ js: $assets.files.hasiru-dala.search.js
 -- end: ftd.column
 
 -- end: search
+

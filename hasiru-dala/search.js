@@ -53,7 +53,8 @@ const wasteDatabase = {
       "pepsi can": "Dry Waste",
       "fanta can": "Dry Waste",
       "glass bottle": "Dry Waste",
-      "bisleri glass bottle": "Dry Waste",
+      "glass water bottle": "Dry Waste",
+      "tetra pack": "Dry Waste",
       "newspaper": "Dry Waste",
       "magazine": "Dry Waste",
       "old books": "Dry Waste",
@@ -93,6 +94,9 @@ const wasteDatabase = {
       "shawarma foil": "Dry Waste",
       "licious cover": "Dry Waste",
       "licious box": "Dry Waste",
+      "paper": "Dry Waste",
+      "kraftpaper": "Dry Waste",
+      "chart paper": "Dry Waste",
 
       "swiggy box": "Dry Waste",
       "swiggy plastic container": "Dry Waste",
@@ -179,6 +183,8 @@ const wasteDatabase = {
       "glass pieces": "Reject Waste",
 
       "old phone": "E-Waste",
+      "old electronics": "E-Waste",
+      "old appliances": "E-Waste",
       "mobile phone": "E-Waste",
       "nokia phone": "E-Waste",
       "smartphone": "E-Waste",
@@ -225,10 +231,10 @@ const wasteDatabase = {
     const searchBtn = document.getElementById('searchBtn');
     const results = document.getElementById('results');
 
-    function showResult(text, colorClass, icon) {
+    function showResult(text, colorClass) {
       const el = document.createElement('div');
       el.className = `result ${colorClass}`;
-      el.innerHTML = `<span class="icon">${icon}</span><span>${text}</span>`;
+      el.innerHTML = `<span>${text}</span>`;
       results.appendChild(el);
     }
 
@@ -240,7 +246,7 @@ const wasteDatabase = {
       clearResults();
       const q = input.value.trim().toLowerCase(); // case-insensitive
       if (!q) {
-        showResult('⚠️ Please enter an item to search.', 'orange', 'ℹ️');
+        showResult('Please enter an item to search.', 'orange', 'ℹ️');
         return;
       }
 
@@ -249,15 +255,16 @@ const wasteDatabase = {
       );
 
       if (matches.length === 0) {
-        showResult('❌ Item not found in database. Please dispose responsibly!', 'orange', '⚠️');
+        showResult('Item not found in database. Please dispose responsibly!', 'orange', '⚠️');
         return;
       }
 
       matches.forEach(k => {
         const bin = wasteDatabase[k];
-        if (bin.includes('Wet')) showResult(`"${k}" → ${bin}`, 'green');
-        else if (bin.includes('Dry')) showResult(`"${k}" → ${bin}`, 'blue');
-        else showResult(`"${k}" → ${bin}`, 'red');
+        if (bin.includes('Wet')) showResult(`${k} → ${bin}`, 'green');
+        else if (bin.includes('Dry')) showResult(`${k} → ${bin}`, 'blue');
+        else if (bin.includes('E-Waste')) showResult(`${k} → ${bin}`, 'black');
+        else showResult(`${k} → ${bin}`, 'red');
       });
     }
 
