@@ -14,11 +14,13 @@ spacing.fixed.px: 50
 
 -- ftd.image:
 src: $assets.files.assets.hasiru-dala.hdi-logo.png
-width.fixed.px: 100
+width.fixed.px if { ftd.device == "mobile" }: 100
+width.fixed.px: 120
 
 -- ftd.image:
 src: $assets.files.assets.hasiru-dala.unwaste-logo.png
-width.fixed.px: 150
+width.fixed.px if { ftd.device == "mobile" }: 150
+width.fixed.px: 183
 
 -- end: ftd.row
 
