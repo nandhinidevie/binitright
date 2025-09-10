@@ -227,47 +227,106 @@ const wasteDatabase = {
       "led bulb": "E-Waste"
     };
 
+
+    const itemTips = {
+  // Tip: Rinse before bin
+  "biryani box": "👉 Rinse and dry before throwing in the bin.",
+  "foil biryani box": "👉 Rinse and dry before throwing in the bin.",
+  "aluminium foil box": "👉 Rinse and dry before throwing in the bin.",
+  "butter chicken box": "👉 Rinse and dry before throwing in the bin.",
+  "pizza box": "👉 Rinse and dry before throwing in the bin.",
+  "beer can": "👉 Rinse and dry before throwing in the bin.",
+  "cold drink can": "👉 Rinse and dry before throwing in the bin.",
+  "coke can": "👉 Rinse and dry before throwing in the bin.",
+  "pepsi can": "👉 Rinse and dry before throwing in the bin.",
+  "fanta can": "👉 Rinse and dry before throwing in the bin.",
+  "glass bottle": "👉 Rinse and dry before throwing in the bin.",
+  "glass water bottle": "👉 Rinse and dry before throwing in the bin.",
+  "tetra pack": "👉 Rinse and dry before throwing in the bin.",
+  "takeaway container": "👉 Rinse and dry before throwing in the bin.",
+  "swiggy plastic container": "👉 Rinse and dry before throwing in the bin.",
+
+  // Tip: Store separately
+  "old phone": "👉 Store separately and send to an e-waste recycler.",
+  "mobile phone": "👉 Store separately and send to an e-waste recycler.",
+  "bulb": "👉 Store separately and send to an e-waste recycler.",
+  "tube light": "👉 Store separately and send to an e-waste recycler.",
+  "cfl bulb": "👉 Store separately and send to an e-waste recycler.",
+  "led bulb": "👉 Store separately and send to an e-waste recycler.",
+  "aa battery": "👉 Store separately and send to an e-waste recycler.",
+  "aaa battery": "👉 Store separately and send to an e-waste recycler.",
+  "cell battery": "👉 Store separately and send to an e-waste recycler.",
+  "laptop battery": "👉 Store separately and send to an e-waste recycler.",
+
+  // Tip: Wrap hazardous
+  "used blade": "👉 Wrap in old newspaper or cloth before disposing.",
+  "broken glass": "👉 Wrap in old newspaper or cloth before disposing.",
+  "glass pieces": "👉 Wrap in old newspaper or cloth before disposing.",
+  "syringe": "👉 Wrap in old newspaper or cloth before disposing.",
+  "injection needle": "👉 Wrap in old newspaper or cloth before disposing.",
+  "shaving razor": "👉 Wrap in old newspaper or cloth before disposing.",
+  "gillette razor": "👉 Wrap in old newspaper or cloth before disposing."
+};
+
+
+
     const input = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-    const results = document.getElementById('results');
+const searchBtn = document.getElementById('searchBtn');
+const results = document.getElementById('results');
+const tipArea = document.getElementById('tipArea');
 
-    function showResult(text, colorClass) {
-      const el = document.createElement('div');
-      el.className = `result ${colorClass}`;
-      el.innerHTML = `<span>${text}</span>`;
-      results.appendChild(el);
+function showResult(text, colorClass) {
+  const el = document.createElement('div');
+  el.className = `result ${colorClass}`;
+  el.innerHTML = `<span>${text}</span>`;
+  results.appendChild(el);
+}
+
+function clearResults() {
+  results.innerHTML = '';
+  tipArea.innerHTML = '';
+  tipArea.style.display = 'none'; // hide tip when results are cleared
+}
+
+function checkBin() {
+  clearResults();
+  const q = input.value.trim().toLowerCase();
+
+  if (!q) {
+    showResult('Please enter an item to search.', 'orange', 'ℹ️');
+    return;
+  }
+
+  const matches = Object.keys(wasteDatabase).filter(k =>
+    k.toLowerCase().includes(q)
+  );
+
+  if (matches.length === 0) {
+    showResult('<span style="color: black;">⚠️ Item not found in database. Please dispose responsibly!</span>', 'orange');
+    return;
+  }
+
+  let tipShown = false;
+
+  matches.forEach(k => {
+    const bin = wasteDatabase[k];
+    if (bin.includes('Wet')) showResult(`${k} → ${bin}`, 'green');
+    else if (bin.includes('Dry')) showResult(`${k} → ${bin}`, 'blue');
+    else if (bin.includes('E-Waste')) showResult(`${k} → ${bin}`, 'black');
+    else showResult(`${k} → ${bin}`, 'red');
+
+    // Show tip if it exists for this item
+    if (!tipShown && itemTips[k]) {
+      tipArea.innerHTML = `<strong>Tip:</strong> ${itemTips[k]}`;
+      tipArea.style.display = 'block';
+      tipShown = true;
     }
+  });
+}
 
-    function clearResults() {
-      results.innerHTML = '';
-    }
 
-    function checkBin() {
-      clearResults();
-      const q = input.value.trim().toLowerCase(); // case-insensitive
-      if (!q) {
-        showResult('Please enter an item to search.', 'orange', 'ℹ️');
-        return;
-      }
+searchBtn.addEventListener('click', checkBin);
 
-      const matches = Object.keys(wasteDatabase).filter(k =>
-        k.toLowerCase().includes(q) // case-insensitive match
-      );
+input.addEventListener('keydown', e => { if (e.key === 'Enter') checkBin(); });
 
-      if (matches.length === 0) {
-        showResult('Item not found in database. Please dispose responsibly!', 'orange', '⚠️');
-        return;
-      }
 
-      matches.forEach(k => {
-        const bin = wasteDatabase[k];
-        if (bin.includes('Wet')) showResult(`${k} → ${bin}`, 'green');
-        else if (bin.includes('Dry')) showResult(`${k} → ${bin}`, 'blue');
-        else if (bin.includes('E-Waste')) showResult(`${k} → ${bin}`, 'black');
-        else showResult(`${k} → ${bin}`, 'red');
-      });
-    }
-
-    searchBtn.addEventListener('click', checkBin);
-
-    input.addEventListener('keydown', e => { if (e.key === 'Enter') checkBin(); });

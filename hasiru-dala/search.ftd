@@ -25,6 +25,7 @@ width.fixed.px: 150
 -- search:
 
 -- ds.copy-small: ©2025 Good Game Company. All rights reserved. 
+color: #000000
 
 -- end: ds.page
 
@@ -39,7 +40,7 @@ width.fixed.px: 150
 
 -- ftd.column:
 width: fill-container
-;; align-content: center
+align-content: center
 spacing.fixed.px: 16
 ;; overflow-y: hidden
 padding.px: 24
@@ -82,6 +83,14 @@ js: $assets.files.hasiru-dala.search.js
 
 -- ftd.column:
 id: results
+css: [$assets.files.hasiru-dala.style.css]
+js: $assets.files.hasiru-dala.search.js
+
+-- end: ftd.column
+
+-- ftd.column:
+id: tipArea
+classes: tip-area
 css: [$assets.files.hasiru-dala.style.css]
 js: $assets.files.hasiru-dala.search.js
 
