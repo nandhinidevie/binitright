@@ -10,15 +10,21 @@ inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
 
 -- ftd.row:
 margin-top.px: 24
+spacing.fixed.px: 50
 
 -- ftd.image:
-src: $assets.files.assets.hdi-logo.svg
+src: $assets.files.assets.hasiru-dala.hdi-logo.png
+width.fixed.px: 100
+
+-- ftd.image:
+src: $assets.files.assets.hasiru-dala.unwaste-logo.png
+width.fixed.px: 150
 
 -- end: ftd.row
 
 -- search:
 
--- ds.fine-print: Copyright Good Game Company 2025
+-- ds.copy-small: ©2025 Good Game Company. All rights reserved. 
 
 -- end: ds.page
 
