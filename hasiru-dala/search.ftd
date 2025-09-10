@@ -1,7 +1,7 @@
 
 -- ds.page: bin it right
 theme-switcher: false
-fastn-badge if { ftd.device == "mobile" }: false
+fastn-badge: false
 inset: $ds.spaces.inset-square.zero
 background.solid: #ffffff
 align-content: center
