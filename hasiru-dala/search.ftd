@@ -1,7 +1,7 @@
 
 -- ds.page: bin it right
 theme-switcher: false
-fastn-badge: false
+fastn-badge if { ftd.device == "mobile" }: false
 inset: $ds.spaces.inset-square.zero
 background.solid: #ffffff
 align-content: center
@@ -14,13 +14,11 @@ spacing.fixed.px: 50
 
 -- ftd.image:
 src: $assets.files.assets.hasiru-dala.hdi-logo.png
-width.fixed.px if { ftd.device == "mobile" }: 100
-width.fixed.px: 120
+width.fixed.px: 100
 
 -- ftd.image:
 src: $assets.files.assets.hasiru-dala.unwaste-logo.png
-width.fixed.px if { ftd.device == "mobile" }: 150
-width.fixed.px: 183
+width.fixed.px: 150
 
 -- end: ftd.row
 

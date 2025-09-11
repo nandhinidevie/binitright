@@ -137,7 +137,6 @@ const wasteDatabase = {
       "plastic grocery cover": "Dry Waste",
       "vegetable plastic cover": "Dry Waste",
       "fruit plastic cover": "Dry Waste",
-      "biscuit wrapper": "Dry Waste",
 
       "baby diaper": "Reject Waste",
       "makeup": "Reject Waste",
@@ -182,14 +181,12 @@ const wasteDatabase = {
       "broken flower pot": "Reject Waste",
       "broken glass": "Reject Waste",
       "glass pieces": "Reject Waste",
-      "cotton buds": "Reject Waste",
-      "q tips": "Reject Waste",
-      "used cotton balls": "Reject Waste",
 
       "old phone": "E-Waste",
       "old electronics": "E-Waste",
       "old appliances": "E-Waste",
       "mobile phone": "E-Waste",
+      "nokia phone": "E-Waste",
       "smartphone": "E-Waste",
       "landline phone": "E-Waste",
       "laptop": "E-Waste",
@@ -233,42 +230,42 @@ const wasteDatabase = {
 
     const itemTips = {
   // Tip: Rinse before bin
-  "biryani box": "Rinse and dry before throwing in the bin.",
-  "foil biryani box": "Rinse and dry before throwing in the bin.",
-  "aluminium foil box": "Rinse and dry before throwing in the bin.",
-  "butter chicken box": "Rinse and dry before throwing in the bin.",
-  "pizza box": "Rinse and dry before throwing in the bin.",
-  "beer can": "Rinse and dry before throwing in the bin.",
-  "cold drink can": "Rinse and dry before throwing in the bin.",
-  "coke can": "Rinse and dry before throwing in the bin.",
-  "pepsi can": "Rinse and dry before throwing in the bin.",
-  "fanta can": "Rinse and dry before throwing in the bin.",
-  "glass bottle": "Rinse and dry before throwing in the bin.",
-  "glass water bottle": "Rinse and dry before throwing in the bin.",
-  "tetra pack": "Rinse and dry before throwing in the bin.",
-  "takeaway container": "Rinse and dry before throwing in the bin.",
-  "swiggy plastic container": "Rinse and dry before throwing in the bin.",
+  "biryani box": "👉 Rinse and dry before throwing in the bin.",
+  "foil biryani box": "👉 Rinse and dry before throwing in the bin.",
+  "aluminium foil box": "👉 Rinse and dry before throwing in the bin.",
+  "butter chicken box": "👉 Rinse and dry before throwing in the bin.",
+  "pizza box": "👉 Rinse and dry before throwing in the bin.",
+  "beer can": "👉 Rinse and dry before throwing in the bin.",
+  "cold drink can": "👉 Rinse and dry before throwing in the bin.",
+  "coke can": "👉 Rinse and dry before throwing in the bin.",
+  "pepsi can": "👉 Rinse and dry before throwing in the bin.",
+  "fanta can": "👉 Rinse and dry before throwing in the bin.",
+  "glass bottle": "👉 Rinse and dry before throwing in the bin.",
+  "glass water bottle": "👉 Rinse and dry before throwing in the bin.",
+  "tetra pack": "👉 Rinse and dry before throwing in the bin.",
+  "takeaway container": "👉 Rinse and dry before throwing in the bin.",
+  "swiggy plastic container": "👉 Rinse and dry before throwing in the bin.",
 
   // Tip: Store separately
-  "old phone": "Store separately and send to an e-waste recycler.",
-  "mobile phone": "Store separately and send to an e-waste recycler.",
-  "bulb": "Store separately and send to an e-waste recycler.",
-  "tube light": "Store separately and send to an e-waste recycler.",
-  "cfl bulb": "Store separately and send to an e-waste recycler.",
-  "led bulb": "Store separately and send to an e-waste recycler.",
-  "aa battery": "Store separately and send to an e-waste recycler.",
-  "aaa battery": "Store separately and send to an e-waste recycler.",
-  "cell battery": "Store separately and send to an e-waste recycler.",
-  "laptop battery": "Store separately and send to an e-waste recycler.",
+  "old phone": "👉 Store separately and send to an e-waste recycler.",
+  "mobile phone": "👉 Store separately and send to an e-waste recycler.",
+  "bulb": "👉 Store separately and send to an e-waste recycler.",
+  "tube light": "👉 Store separately and send to an e-waste recycler.",
+  "cfl bulb": "👉 Store separately and send to an e-waste recycler.",
+  "led bulb": "👉 Store separately and send to an e-waste recycler.",
+  "aa battery": "👉 Store separately and send to an e-waste recycler.",
+  "aaa battery": "👉 Store separately and send to an e-waste recycler.",
+  "cell battery": "👉 Store separately and send to an e-waste recycler.",
+  "laptop battery": "👉 Store separately and send to an e-waste recycler.",
 
   // Tip: Wrap hazardous
-  "used blade": "Wrap in old newspaper or cloth before disposing.",
-  "broken glass": "Wrap in old newspaper or cloth before disposing.",
-  "glass pieces": "Wrap in old newspaper or cloth before disposing.",
-  "syringe": "Wrap in old newspaper or cloth before disposing.",
-  "injection needle": "Wrap in old newspaper or cloth before disposing.",
-  "shaving razor": "Wrap in old newspaper or cloth before disposing.",
-  "gillette razor": "Wrap in old newspaper or cloth before disposing."
+  "used blade": "👉 Wrap in old newspaper or cloth before disposing.",
+  "broken glass": "👉 Wrap in old newspaper or cloth before disposing.",
+  "glass pieces": "👉 Wrap in old newspaper or cloth before disposing.",
+  "syringe": "👉 Wrap in old newspaper or cloth before disposing.",
+  "injection needle": "👉 Wrap in old newspaper or cloth before disposing.",
+  "shaving razor": "👉 Wrap in old newspaper or cloth before disposing.",
+  "gillette razor": "👉 Wrap in old newspaper or cloth before disposing."
 };
 
 
@@ -296,13 +293,15 @@ function checkBin() {
   const q = input.value.trim().toLowerCase();
 
   if (!q) {
-    showResult('Please enter an item to search.', 'orange', 'ℹ️');
+    showResult('Please enter an item to search.', 'orange');
     return;
   }
 
-  const matches = Object.keys(wasteDatabase).filter(k =>
-    k.toLowerCase().includes(q)
-  );
+ const matches = Object.keys(wasteDatabase).filter(k => {
+  const pattern = new RegExp(`\\b${q}\\b`, 'i');  // word boundary match
+  return pattern.test(k);
+});
+
 
   if (matches.length === 0) {
     showResult('<span style="color: black;">⚠️ Item not found in database. Please dispose responsibly!</span>', 'orange');
@@ -313,19 +312,39 @@ function checkBin() {
 
   matches.forEach(k => {
     const bin = wasteDatabase[k];
-    if (bin.includes('Wet')) showResult(`${k} → ${bin}`, 'green');
-    else if (bin.includes('Dry')) showResult(`${k} → ${bin}`, 'blue');
-    else if (bin.includes('E-Waste')) showResult(`${k} → ${bin}`, 'black');
-    else showResult(`${k} → ${bin}`, 'red');
+    let colorClass = '';
 
-    // Show tip if it exists for this item
+    if (bin.includes('Wet')) colorClass = 'green';
+    else if (bin.includes('Dry')) colorClass = 'blue';
+    else if (bin.includes('E-Waste')) colorClass = 'black';
+    else colorClass = 'red';
+
+    showResult(`${k} → ${bin}`, colorClass);
+
+    // ✅ ONLY show tip if this item exactly matches AND matches correct bin type
     if (!tipShown && itemTips[k]) {
-      tipArea.innerHTML = `<span>💡 ${itemTips[k]} </span>`;
-      tipArea.style.display = 'block';
-      tipShown = true;
+      const tip = itemTips[k];
+
+      // Determine what kind of tip it is
+      const isDryTip = tip.includes('Rinse and dry');
+      const isEwasteTip = tip.includes('Store separately');
+      const isHazardTip = tip.includes('Wrap in old newspaper');
+
+      // Match tip only to correct bin type
+      if (
+        (isDryTip && bin === 'Dry Waste') ||
+        (isEwasteTip && bin === 'E-Waste') ||
+        (isHazardTip && bin === 'Reject Waste')
+      ) {
+        tipArea.innerHTML = `<strong>Tip:</strong> ${tip}`;
+        tipArea.style.display = 'block';
+        tipShown = true;
+      }
     }
   });
 }
+
+
 
 
 searchBtn.addEventListener('click', checkBin);
