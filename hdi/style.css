@@ -1,0 +1,380 @@
+/* ================================
+   Hasiru Dala Bin Finder — HDI Brand Styles
+   Colors + Typography updated per guidelines
+   ================================ */
+
+:root {
+  /* Brand */
+  --brand-green: #158538;  /* primary green for light backgrounds */
+  --brand-blue:  #199cbf;  /* primary blue for dark backgrounds (used sparingly on light UI) */
+  --brand-gray:  #565656;  /* body/content on light bg */
+  --brand-yellow:#e8ae11;  /* secondary (use only if necessary) */
+
+  /* Neutrals */
+  --bg:           #ffffff;
+  --text-strong:  #1f2937;
+  --text-body:    var(--brand-gray);
+  --muted-border: #e5e7eb;
+
+  /* Utility tints (for result cards) */
+  --green-50:  rgba(21,133,56,0.10);
+  --green-700: var(--brand-green);
+
+  --blue-50:   rgba(25,156,191,0.12);
+  --blue-800:  #0a6073;
+
+  --red-50:    #fee2e2;
+  --red-800:   #991b1b;
+
+  --yellow-50: rgba(232,174,17,0.12);
+  --yellow-800:#624b05;
+
+  --black-50:  rgba(17,17,17,0.10);
+  --black-900: #111111;
+
+  --shadow-sm: 0 2px 6px rgba(2,6,23,0.06);
+  --shadow-md: 0 6px 18px rgba(0,2,5,0.14);
+}
+
+/* Global Typography */
+html, body {
+  background: var(--bg);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+.tagline {
+  font-family: "Glass", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 400;           /* tweak if you want lighter */
+  color: var(--brand-gray);  /* or use var(--brand-gray) for softer tone */
+  text-align: center;
+}
+
+/* Headlines: "Glass" (loaded separately), fallback to system sans */
+.h1 {
+  font-family: "Glass", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--text-strong);
+  /*margin-bottom: 12px;*/
+  letter-spacing: -0.01em;
+}
+
+/* Body & smaller text: Montserrat */
+body, .container, input, button, .result {
+  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-weight: 400;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 700px;
+  align-self: center;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  background: var(--bg);
+  border: 1px solid var(--muted-border);
+  max-height: 60vh;         /* ✅ Limit container height to 90% of viewport */
+  /*overflow-y: auto;*/
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Search Input */
+.search-input {
+  display: block;
+  width: 100%;
+  padding: 14px 56px 14px 16px;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow .15s, border-color .15s, background-color .15s;
+  color: var(--text-strong);
+  background: #fff;
+}
+.search-input::placeholder {
+  color: #9aa3af;
+  opacity: 1;
+}
+.search-input:focus {
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 4px rgba(21,133,56,0.15);
+}
+
+/* Search Button */
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 5;
+  box-shadow: 0 6px 12px rgba(16,24,40,0.10);
+  border: none;
+}
+.search-btn:hover { animation: pulse .9s infinite; }
+.search-btn:focus-visible {
+  outline: 3px solid rgba(25,156,191,0.45); /* blue focus ring for contrast on green */
+  outline-offset: 2px;
+}
+@keyframes pulse {
+  0%   { transform: translateY(-50%) scale(1); }
+  50%  { transform: translateY(-50%) scale(1.07); }
+  100% { transform: translateY(-50%) scale(1); }
+}
+
+/* Minimal search icon */
+.search-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: relative;
+}
+.search-icon::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: -4px;
+  width: 8px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+
+
+/* Results */
+#results {
+  display: grid;
+  background: #f7f7f7;
+  width: 100%;
+  justify-content: center;
+  border-radius: 10px;
+  max-height: 200px; /* roughly enough for 3 result cards */
+  overflow-y: auto;
+  padding-bottom: 16px;
+
+  /* Hide scrollbar for WebKit (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+#results::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+
+#results:empty {
+  display: none; /* ✅ Hides the container if empty */
+}
+
+
+.tip-area {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  font-size: 0.95rem;
+  color: var(--text-strong);
+  border: 1px solid var(--muted-border);
+  box-shadow: var(--shadow-sm);
+  display: none; /* hidden by default */
+}
+
+.tip-area strong {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+
+
+.result {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  word-break: break-word;
+  border: 1px solid var(--muted-border);
+  background: #fff;
+}
+.result span.icon { font-size: 1.4rem; }
+
+/* Bin color chips
+   - Green  → Wet Waste
+   - Blue   → Dry Waste (brand blue used subtly on light bg)
+   - Red    → Reject Waste
+   - Black  → E-Waste
+   - Yellow → Optional secondary (warnings/tips)
+*/
+.green {
+  background: var(--green-50);
+  color: var(--green-700);
+  border: 1px solid rgba(21,133,56,0.18);
+  margin-top: 12px;
+}
+.blue  {
+  background: var(--blue-50);
+  color: var(--blue-800);
+  border: 1px solid rgba(25,156,191,0.18);
+  margin-top: 12px;
+}
+.red   {
+  background: var(--red-50);
+  color: var(--red-800);
+  border: 1px solid rgba(239,68,68,0.16);
+  margin-top: 12px;
+}
+.black {
+  background: var(--black-50);
+  color: var(--black-900);
+  border: 1px solid rgba(17,17,17,0.22);
+  margin-top: 12px;
+}
+.yellow {
+  background: var(--yellow-50);
+  color: var(--yellow-800);
+  border: 1px solid rgba(232,174,17,0.22);
+  margin-top: 12px;
+}
+
+.result .img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .container { padding: 16px; border-radius: 12px; }
+  .h1 { font-size: 1.45rem; margin-bottom: 14px; }
+  .search-input { padding: 12px 52px 12px 12px; font-size: .95rem; }
+  .search-btn { width: 40px; height: 40px; right: 8px; }
+  .result { font-size: .95rem; padding: 10px 12px; }
+  .tip-area { font-size: 12px; }
+  .tagline { font-size: 18px; }
+}
+
+
+/* Share button container */
+.share-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* Main share button */
+.share-icon {
+  background: #ffffff;
+  color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.share-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Options container */
+.share-options {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  gap: 10px;
+}
+
+.share-option {
+  background: #ffffff;
+  color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.share-option:hover {
+  background: #f0f0f0;
+}
+
+
+/* Mobile overrides */
+@media (max-width: 640px) {
+  .container { 
+    padding: 16px; 
+    border-radius: 12px; 
+  }
+
+  .h1 { 
+    font-size: 1.45rem; 
+    margin-bottom: 14px; 
+  }
+
+  .search-input { 
+    padding: 12px 52px 12px 12px; 
+    font-size: .95rem; 
+  }
+
+  .search-btn { 
+    width: 40px; 
+    height: 40px; 
+    right: 8px; 
+  }
+
+  .result { 
+    font-size: .95rem; 
+    padding: 10px 12px; 
+  }
+
+  /* ✅ Tip area moves inside results */
+  .tip-area {
+    position: static;       /* no absolute positioning */
+    margin: 12px 0 0 0;     /* spacing from results */
+    width: 100%;            /* fit within results container */
+    box-sizing: border-box; 
+  }
+
+  /* ✅ Share icon moves a bit up */
+  .share-container {
+    bottom: 70px;   /* higher than 20px */
+    right: 16px;
+  }
+}
