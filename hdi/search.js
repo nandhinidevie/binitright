@@ -347,16 +347,16 @@ const wasteDatabase = {
   "laptop battery": "Store separately and send to an e-waste recycler.",
 
   // Tip: Wrap hazardous
-  "used blade": "Wrap in old newspaper or cloth before disposing.",
-  "broken glass": "Wrap in old newspaper or cloth before disposing.",
-  "glass pieces": "Wrap in old newspaper or cloth before disposing.",
-  "syringe": "Wrap in old newspaper or cloth before disposing.",
-  "injection needle": "Wrap in old newspaper or cloth before disposing.",
-  "shaving razor": "Wrap in old newspaper or cloth before disposing.",
-  "gillette razor": "Wrap in old newspaper or cloth before disposing.",
-  "broken ceramic cup": "Wrap in old newspaper or cloth before disposing.",
-  "broken ceramic plate": "Wrap in old newspaper or cloth before disposing.",
-  "broken ceramic bowl": "Wrap in old newspaper or cloth before disposing.",
+  "used blade": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "broken glass": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "glass pieces": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "syringe": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "injection needle": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "shaving razor": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "gillette razor": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "broken ceramic cup": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "broken ceramic plate": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
+  "broken ceramic bowl": "If it is broken or sharp, wrap it in old newspaper or cloth before disposing.",
 };
 
 
@@ -389,18 +389,17 @@ function checkBin() {
     return;
   }
 
- const matches = Object.keys(wasteDatabase).filter(k => {
-  const pattern = new RegExp(`\\b${q}\\b`, 'i');  // word boundary match
-  return pattern.test(k);
-});
-
+  const matches = Object.keys(wasteDatabase).filter(k => {
+    const pattern = new RegExp(`\\b${q}\\b`, 'i'); // word boundary match
+    return pattern.test(k);
+  });
 
   if (matches.length === 0) {
     showResult('<span style="color: black;">⚠️ Item not found in database. Please dispose responsibly!</span>', 'orange');
     return;
   }
 
-  let tipShown = false;
+  let tipsToShow = []; // collect tips across all matches
 
   matches.forEach(k => { 
     const bin = wasteDatabase[k];
@@ -421,38 +420,40 @@ function checkBin() {
         imgSrc = 'https://i.postimg.cc/RVSJSNzv/reject-bin.png';
     }
 
-    // HTML with an 8px bin image
+    // HTML with bin image
     const html = `${k} → ${bin} <img src="${imgSrc}" style="width:20px;vertical-align:middle;">`;
-    
     showResult(html, colorClass);
 
-    // ✅ ONLY show tip if this item exactly matches AND matches correct bin type
-    if (!tipShown && itemTips[k]) {
+    // Tip check
+    if (itemTips[k]) {
       const tip = itemTips[k];
-
-      // Determine what kind of tip it is
-      const isDryTip = tip.includes('Rinse and dry');
+      const isDryTip = tip.includes('If it has food or liquid');
       const isEwasteTip = tip.includes('Store separately');
-      const isHazardTip = tip.includes('Wrap in old newspaper');
+      const isHazardTip = tip.includes('If it is broken or sharp');
 
-      // Match tip only to correct bin type
-      if (
-        (isDryTip && bin === 'Dry Waste') ||
-        (isEwasteTip && bin === 'E-Waste') ||
-        (isHazardTip && bin === 'Reject Waste')
-      ) {
-        tipArea.innerHTML = `<span>💡 </span>${tip}`;
-        tipArea.style.display = 'block';
-        tipShown = true;
+      let tipClass = '';
+      if (isDryTip && bin === 'Dry Waste') tipClass = 'tip-dry';
+      if (isEwasteTip && bin === 'E-Waste') tipClass = 'tip-ewaste';
+      if (isHazardTip && bin === 'Reject Waste') tipClass = 'tip-hazard';
+
+      if (tipClass && !tipsToShow.some(t => t.text === tip)) {
+        tipsToShow.push({ text: tip, cls: tipClass });
       }
     }
   });
+
+  // After looping, show all tips together
+  if (tipsToShow.length > 0) {
+    tipArea.innerHTML = tipsToShow
+      .map(t => `<div class="tip ${t.cls}">💡 ${t.text}</div>`)
+      .join('');
+    tipArea.style.display = 'block';
+  }
 }
 
 
-searchInput.addEventListener('keydown', function (e) {
+input.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') {
-    // Hide tagline
     tagline.style.display = 'none';
   }
 });
@@ -494,7 +495,7 @@ whatsappShare.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Change page title
-  document.title = "Hasiru Dala Bin Finder";
+  document.title = "Bin Finder";
 
   // Change favicon
   const faviconUrl = "/hdi/bin-finder/favicon.png"; // your custom favicon path
