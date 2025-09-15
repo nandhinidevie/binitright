@@ -131,7 +131,7 @@ css: [$assets.files.hdi.style.css]
 js: $assets.files.hdi.search.js
 
 -- ftd.image:
-src: $assets.files.assets.WhatsApp.svg
+src: $assets.files.assets.whatsapp.svg
 width.fixed.px: 50
 id: whatsappShare
 classes: share-option
