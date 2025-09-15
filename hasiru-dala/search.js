@@ -32,6 +32,7 @@ const wasteDatabase = {
       "grass cuttings": "Wet Waste",
 
       "plastic cover": "Dry Waste",
+      "biscuit wrapper": "Dry Waste",
       "water bottle": "Dry Waste",
       "bisleri bottle": "Dry Waste",
       "plastic dabba": "Dry Waste",
@@ -67,7 +68,7 @@ const wasteDatabase = {
       "frooti pack": "Dry Waste",
       "real juice pack": "Dry Waste",
       "buttermilk pack": "Dry Waste",
-      "paper  boat pack": "Dry Waste",
+      "paperboat pack": "Dry Waste",
       "paper cup": "Dry Waste",
       "paper plate": "Dry Waste",
       "thermocol": "Dry Waste",
@@ -137,11 +138,15 @@ const wasteDatabase = {
       "plastic grocery cover": "Dry Waste",
       "vegetable plastic cover": "Dry Waste",
       "fruit plastic cover": "Dry Waste",
-      "biscuit wrapper": "Dry Waste",
 
       "baby diaper": "Reject Waste",
       "used napkin": "Reject Waste",
-      "finger nails": "Reject Waste",
+      "fingernails": "Reject Waste",
+      "nails": "Reject Waste",
+      "cotton buds": "Reject Waste",
+      "q tips": "Reject Waste",
+      "q tip": "Reject Waste",
+      "used cotton balls": "Reject Waste",
       "hair": "Reject Waste",
       "makeup": "Reject Waste",
       "lipstick": "Reject Waste",
@@ -185,9 +190,6 @@ const wasteDatabase = {
       "broken flower pot": "Reject Waste",
       "broken glass": "Reject Waste",
       "glass pieces": "Reject Waste",
-      "cotton buds": "Reject Waste",
-      "q tips": "Reject Waste",
-      "used cotton balls": "Reject Waste",
 
       "old phone": "E-Waste",
       "old electronics": "E-Waste",
@@ -316,16 +318,29 @@ function checkBin() {
 
   let tipShown = false;
 
-  matches.forEach(k => {
+  matches.forEach(k => { 
     const bin = wasteDatabase[k];
     let colorClass = '';
+    let imgSrc = '';
 
-    if (bin.includes('Wet')) colorClass = 'green';
-    else if (bin.includes('Dry')) colorClass = 'blue';
-    else if (bin.includes('E-Waste')) colorClass = 'black';
-    else colorClass = 'red';
+    if (bin.includes('Wet')) {
+        colorClass = 'green';
+        imgSrc = 'https://i.postimg.cc/59qFW8TP/wet-bin.png';
+    } else if (bin.includes('Dry')) {
+        colorClass = 'blue';
+        imgSrc = 'https://i.postimg.cc/xT6Jcn0M/dry-bin.png';
+    } else if (bin.includes('E-Waste')) {
+        colorClass = 'black';
+        imgSrc = 'https://i.postimg.cc/7hVC1ySv/ewaste-bin.png';
+    } else {
+        colorClass = 'red';
+        imgSrc = 'https://i.postimg.cc/RVSJSNzv/reject-bin.png';
+    }
 
-    showResult(`${k} → ${bin}`, colorClass);
+    // HTML with an 8px bin image
+    const html = `${k} → ${bin} <img src="${imgSrc}" style="width:20px;vertical-align:middle;">`;
+    
+    showResult(html, colorClass);
 
     // ✅ ONLY show tip if this item exactly matches AND matches correct bin type
     if (!tipShown && itemTips[k]) {
@@ -342,7 +357,7 @@ function checkBin() {
         (isEwasteTip && bin === 'E-Waste') ||
         (isHazardTip && bin === 'Reject Waste')
       ) {
-        tipArea.innerHTML = `<span>💡 ${itemTips[k]} </span>`;
+        tipArea.innerHTML = `<span>💡</span>${tip}`;
         tipArea.style.display = 'block';
         tipShown = true;
       }

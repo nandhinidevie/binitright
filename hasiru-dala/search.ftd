@@ -24,6 +24,13 @@ width.fixed.px: 183
 
 -- end: ftd.row
 
+-- ftd.column:
+
+-- ftd.text: Not sure where to throw it? Search below and find out.
+classes: tagline
+
+-- end: ftd.column
+
 -- search:
 
 -- ds.copy-small: ©2025 Good Game Company. All rights reserved. 
