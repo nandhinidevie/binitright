@@ -38,17 +38,19 @@ spacing.fixed.px: 24
 margin-vertical.px: 100
 width.fixed.px if { ftd.device != "mobile" }: 450
 width: fill-container
-spacing.fixed.px: 40
+spacing.fixed.px: 24
 align-content: center
+css: [$assets.files.hdi.style.css]
+classes: container
 
--- ds.heading-large: Bin it right
-align: center
+
+-- ftd.text: Bin It Right
+classes: h1
 
 -- ftd.text: Learn waste segregation the fun way
 classes: tagline
 
--- ds.primary-button: Start Game
-link: https://bin-it-right.vercel.app/game/hasiru-dala-test/
+-- cta:
 
 -- end: ftd.column
 
@@ -57,3 +59,18 @@ color: #000000
 
 -- end: ds.page
 
+
+
+-- component cta:
+
+-- ftd.column:
+align-content: center
+css: [$assets.files.hdi.style.css]
+
+-- ftd.text: Start Game
+link: https://bin-it-right.vercel.app/game/hasiru-dala-test/
+classes: green-btn
+
+-- end: ftd.column
+
+-- end: cta
