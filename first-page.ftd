@@ -1,0 +1,78 @@
+;; how to use
+
+-- first-page:
+logo: $logo
+footer: @copyright
+
+-- end: first-page
+
+
+
+
+
+
+
+
+
+
+-- component first-page:
+image-list list logo:
+children children:
+string footer:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+padding.px: 32
+spacing: space-between
+height: fill-container
+
+-- ftd.row:
+margin-top.px: 24
+spacing.fixed.px: 50
+spacing.fixed.px if { ftd.device == "mobile" }: 24
+
+-- ftd.image:
+for: $obj in $first-page.logo
+src: $obj.image
+width.fixed.px if { ftd.device == "mobile" }: 74
+width.fixed.px: 120
+
+-- end: ftd.row
+
+-- ftd.column:
+width: fill-container
+align-content: top-center
+spacing.fixed.px: 24
+children: $first-page.children
+
+-- end: ftd.column
+
+-- ds.copy-small: $first-page.footer 
+color: #000000
+
+-- end: ftd.column
+
+-- end: first-page
+
+
+
+
+
+;; record and list
+
+-- record image-list:
+ftd.image-src image:
+
+-- image-list list logo:
+
+-- image-list:
+image: $assets.files.assets.copy.svg
+
+-- image-list:
+image: $assets.files.assets.copy.svg
+
+-- image-list:
+image: $assets.files.assets.copy.svg
+
+-- end: logo

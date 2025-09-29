@@ -13,7 +13,7 @@
 
 -- boolean $show-options: false
 
--- ftd.image-src site-logo: $assets.files.assets.logo.svg
+-- ftd.image-src site-logo: https://i.postimg.cc/XNksQP3b/fav-icon-bir.png
 
 -- pr.sitemap-data sitemap:
 $processor$: pr.sitemap

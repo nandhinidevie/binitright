@@ -1,7 +1,7 @@
 -- import: fastn
 
 -- fastn.package: bin-it-right.fifthtry.site
-favicon: https://i.postimg.cc/Y9fmbt9W/my-profile-picture-440-x-440-px-6.png
+favicon: https://i.postimg.cc/XNksQP3b/fav-icon-bir.png
 
 -- fastn.dependency: design-system.fifthtry.site
 provided-via: bin-it-right.fifthtry.site/ds
