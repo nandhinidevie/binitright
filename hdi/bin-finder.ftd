@@ -16,14 +16,14 @@ spacing.fixed.px: 50
 spacing.fixed.px if { ftd.device == "mobile" }: 24
 
 -- ftd.image:
-src: $assets.files.assets.hasiru-dala.hdi-logo.png
-width.fixed.px if { ftd.device == "mobile" }: 74
-width.fixed.px: 120
-
--- ftd.image:
 src: $assets.files.assets.hasiru-dala.unwaste-logo.png
 width.fixed.px if { ftd.device == "mobile" }: 110
 width.fixed.px: 183
+
+-- ftd.image:
+src: $assets.files.assets.hasiru-dala.hdi-logo.png
+width.fixed.px if { ftd.device == "mobile" }: 74
+width.fixed.px: 120
 
 -- end: ftd.row
 
