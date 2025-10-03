@@ -11,6 +11,7 @@ spacing: $ds.spaces.vertical-gap.space-between
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
 document-image: https://i.postimg.cc/XJt7tnVX/UNWASTE-LOGO.png
 
+Play our custom Bin It Right game and learn waste segregation the fun way. Tailored for Bengaluru apartments and communities.
 
 -- ftd.row:
 margin-top.px: 24
