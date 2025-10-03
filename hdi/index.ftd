@@ -9,7 +9,7 @@ background.solid: #ffffff
 align-content: center
 spacing: $ds.spaces.vertical-gap.space-between
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
-document-image: $assets.files.assets.hasiru-dala.unwaste-logo.png
+document-image: https://i.postimg.cc/dQbH5gKV/Unwaste-logo-png-1.png
 
 -- ftd.row:
 margin-top.px: 24
