@@ -10,7 +10,8 @@ align-content: center
 spacing: $ds.spaces.vertical-gap.space-between
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
 document-image: https://i.postimg.cc/XJt7tnVX/UNWASTE-LOGO.png
-document-description: Not sure where to throw your waste? Use our Bin Finder to quickly search any household item and know if it belongs in Wet, Dry, Reject, or E-Waste bins.
+
+Not sure where to throw your waste? Use our Bin Finder to quickly search any household item and know if it belongs in Wet, Dry, Reject, or E-Waste bins.
 
 -- ftd.row:
 margin-top.px: 24
