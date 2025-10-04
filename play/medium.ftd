@@ -1,0 +1,46 @@
+
+-- lets-ga.setup:
+
+-- ds.page: Bin It Right
+theme-switcher: false
+fastn-badge: false
+inset: $ds.spaces.inset-square.zero
+background.solid: #ffffff
+align-content: center
+spacing: $ds.spaces.vertical-gap.space-between
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
+document-image: https://i.postimg.cc/XNksQP3b/fav-icon-bir.png
+
+Play Bin It Right game and learn waste segregation the fun way.
+
+-- ftd.column:
+width: fill-container
+align-content: top-center
+spacing.fixed.px: 24
+
+-- end: ftd.column
+
+-- ftd.column:
+margin-vertical.px: 100
+width.fixed.px if { ftd.device != "mobile" }: 450
+width: fill-container
+spacing.fixed.px: 24
+align-content: center
+css: [$assets.files.hdi.style.css]
+classes: container
+
+
+-- ds.heading-large: Bin It Right
+
+-- ds.copy-regular: Learn waste segregation the fun way
+
+-- ds.primary-button: Start Game
+link: https://bin-it-right.vercel.app/game/play/
+
+-- end: ftd.column
+
+-- ds.copy-small: ©2025 Good Game Company. All rights reserved. 
+color: #000000
+
+-- end: ds.page
+
