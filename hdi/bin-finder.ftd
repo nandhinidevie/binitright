@@ -98,6 +98,14 @@ js: $assets.files.hdi.search.js
 
 -- end: ftd.column
 
+-- ftd.column:
+id: autocomplete-list
+js: $assets.files.hdi.search.js
+css: [$assets.files.hdi.style.css]
+width: fill-container
+
+-- end: ftd.column
+
 -- end: ftd.column
 
 -- ftd.column:
@@ -119,9 +127,17 @@ classes: share-container
 css: [$assets.files.hdi.style.css]
 
 -- ftd.image:
-src: $assets.files.assets.share.svg
-width.fixed.px: 50
+src: $assets.files.assets.+.svg
+width.fixed.px: 40
 id: shareBtn
+classes: share-icon
+css: [$assets.files.hdi.style.css]
+js: $assets.files.hdi.search.js
+
+-- ftd.image:
+src: $assets.files.assets.x.svg
+width.fixed.px: 40
+id: shareClose
 classes: share-icon
 css: [$assets.files.hdi.style.css]
 js: $assets.files.hdi.search.js
@@ -134,7 +150,8 @@ js: $assets.files.hdi.search.js
 
 -- ftd.image:
 src: $assets.files.assets.copy.svg
-width.fixed.px: 50
+width.fixed.px: 36
+background.solid: #FFDB58
 id: copyLink
 classes: share-option
 css: [$assets.files.hdi.style.css]
@@ -142,11 +159,22 @@ js: $assets.files.hdi.search.js
 
 -- ftd.image:
 src: $assets.files.assets.whatsapp.svg
-width.fixed.px: 50
+width.fixed.px: 36
+background.solid: #006ca5
 id: whatsappShare
 classes: share-option
 css: [$assets.files.hdi.style.css]
 js: $assets.files.hdi.search.js
+
+-- ftd.image:
+src: $assets.files.assets.game.svg
+width.fixed.px: 36
+background.solid: #37fd12
+id: copyLink
+classes: share-option
+css: [$assets.files.hdi.style.css]
+js: $assets.files.hdi.search.js
+link: https://www.binitright.com/hdi/
 
 -- end: ftd.column
 

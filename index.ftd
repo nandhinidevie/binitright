@@ -35,7 +35,7 @@ inset: $ds.spaces.inset-square.zero
 link: https://binitright.com/version-0/
 
 -- ds.primary-button: Play game (Medium)
-link: https://binitright.com/blu-green-blr-2025/
+link: https://bin-it-right.vercel.app/game/play/
 
 -- ds.primary-button: Play game (Hard)
 link: https://binitright.com/wework/

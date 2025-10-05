@@ -447,6 +447,136 @@ const results = document.getElementById('results');
 const tipArea = document.getElementById('tipArea');
 const tagline = document.querySelector('.tagline');
 
+// Create a container for autocomplete suggestions
+const autoCompleteContainer = document.createElement('div');
+autoCompleteContainer.id = 'autocomplete-list';
+input.parentNode.appendChild(autoCompleteContainer);
+
+// Function to close autocomplete
+function closeAutocomplete() {
+  autoCompleteContainer.innerHTML = '';
+  autoCompleteContainer.style.display = 'none'; // hide the box
+}
+
+// Function to create autocomplete suggestions
+function createAutocomplete(value) {
+  closeAutocomplete();
+  if (!value) return;
+
+  autoCompleteContainer.style.display = 'block'; // show suggestion box
+
+  const query = value.toLowerCase();
+  const allItems = Object.keys(wasteDatabase);
+
+  // Filter matching items
+  let matches = allItems.filter(item =>
+    item.toLowerCase().includes(query)
+  );
+
+  // Sort alphabetically, prioritizing those that start with the query
+  matches.sort((a, b) => {
+    const aLower = a.toLowerCase();
+    const bLower = b.toLowerCase();
+    const aStarts = aLower.startsWith(query);
+    const bStarts = bLower.startsWith(query);
+
+    if (aStarts && !bStarts) return -1;
+    if (!aStarts && bStarts) return 1;
+    return aLower.localeCompare(bLower);
+  });
+
+  // ✅ If no matches found
+  if (matches.length === 0) {
+    const noResult = document.createElement('div');
+    noResult.className = 'no-results';
+    noResult.textContent = 'No related items';
+    autoCompleteContainer.appendChild(noResult);
+    return;
+  }
+
+  // ✅ Show matching results
+  matches.forEach(item => {
+    const suggestion = document.createElement('div');
+    suggestion.className = 'autocomplete-item';
+
+    // Highlight matching part
+    const regex = new RegExp(`(${value})`, 'i');
+    suggestion.innerHTML = item.replace(regex, '<strong>$1</strong>');
+
+    suggestion.addEventListener('click', () => {
+      input.value = item;
+      closeAutocomplete();
+      checkBin(); // trigger your existing check logic
+    });
+
+    autoCompleteContainer.appendChild(suggestion);
+  });
+}
+
+
+// Track active suggestion for keyboard navigation
+let currentFocus = -1;
+
+input.addEventListener('input', function () {
+  const value = this.value.trim();
+
+  if (!value) {
+    closeAutocomplete(); // hide autocomplete if input is empty
+    return;
+  }
+
+  createAutocomplete(value);
+  currentFocus = -1;
+});
+
+
+input.addEventListener('keydown', function (e) {
+  let items = autoCompleteContainer.getElementsByClassName('autocomplete-item');
+  if (!items) return;
+
+  if (e.key === 'ArrowDown') {
+    // Move focus down
+    currentFocus++;
+    addActive(items);
+  } else if (e.key === 'ArrowUp') {
+    // Move focus up
+    currentFocus--;
+    addActive(items);
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (currentFocus > -1 && items[currentFocus]) {
+      items[currentFocus].click(); // select current
+    } else {
+      checkBin(); // regular enter if no selection
+    }
+  } else if (e.key === 'Tab') {
+    if (currentFocus > -1 && items[currentFocus]) {
+      e.preventDefault();
+      items[currentFocus].click();
+    }
+  }
+});
+
+function addActive(items) {
+  if (!items) return false;
+  removeActive(items);
+  if (currentFocus >= items.length) currentFocus = 0;
+  if (currentFocus < 0) currentFocus = items.length - 1;
+  items[currentFocus].style.backgroundColor = '#e9e9e9';
+}
+
+function removeActive(items) {
+  for (let i = 0; i < items.length; i++) {
+    items[i].style.backgroundColor = '#fff';
+  }
+}
+
+// Close the autocomplete when clicking outside
+document.addEventListener('click', function (e) {
+  if (e.target !== input) closeAutocomplete();
+});
+
+
 function showResult(text, colorClass) {
   const el = document.createElement('div');
   el.className = `result ${colorClass}`;
@@ -545,14 +675,24 @@ input.addEventListener('keydown', e => { if (e.key === 'Enter') checkBin(); });
 
 
 // Share button functionality
-const shareBtn = document.getElementById("shareBtn");
+const shareBtn = document.getElementById('shareBtn');
+const shareClose = document.getElementById('shareClose');
 const shareOptions = document.getElementById("shareOptions");
 const copyLink = document.getElementById("copyLink");
 const whatsappShare = document.getElementById("whatsappShare");
 
-shareBtn.addEventListener("click", () => {
-  shareOptions.style.display =
-    shareOptions.style.display === "flex" ? "none" : "flex";
+shareClose.style.display = 'none'; // initially hide cross icon
+
+shareBtn.addEventListener('click', () => {
+  shareBtn.style.display = 'none';
+  shareClose.style.display = 'inline-block'; // or 'block' depending on layout
+  shareOptions.style.display = 'block'; // show share options if you have
+});
+
+shareClose.addEventListener('click', () => {
+  shareClose.style.display = 'none';
+  shareBtn.style.display = 'inline-block';
+  shareOptions.style.display = 'none'; // hide share options again
 });
 
 // Copy URL to clipboard

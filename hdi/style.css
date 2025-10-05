@@ -312,9 +312,9 @@ body, .container, input, button, .result {
 
 /* Main share button */
 .share-icon {
-  background: #ffffff;
+  background: var(--brand-green);
   color: #fff;
-  padding: 8px;
+  padding: 14px;
   border-radius: 50%;
   cursor: pointer;
   text-align: center;
@@ -331,9 +331,8 @@ body, .container, input, button, .result {
   display: none;
   flex-direction: column;
   position: absolute;
-  bottom: 60px;
-  right: 0;
-  gap: 10px;
+  bottom: 50px;
+  right: 2px;
 }
 
 .share-option {
@@ -345,6 +344,7 @@ body, .container, input, button, .result {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: background 0.2s;
   white-space: nowrap;
+  margin-top: 10px;
 }
 
 .share-option:hover {
@@ -430,3 +430,44 @@ body, .container, input, button, .result {
   text-decoration: none;      /* remove underline */
 }
 
+#autocomplete-list {
+  position: absolute;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #000;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: scroll; /* scrolling enabled */
+  width: 100%;
+  box-sizing: border-box;
+  top: 56px;
+  border-radius: 24px;
+  padding: 12px;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  /* Hide scrollbar completely */
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+#autocomplete-list::-webkit-scrollbar {
+  width: 0;   /* Chrome, Safari, Edge */
+  height: 0;
+}
+
+/* Autocomplete items */
+.autocomplete-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  color: #000;
+  border-radius: 12px;
+}
+
+.autocomplete-item:hover {
+  background-color: #f0f0f0;
+}
+
+.autocomplete-item strong {
+  font-weight: bold;
+}
