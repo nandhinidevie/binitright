@@ -151,7 +151,7 @@ js: $assets.files.hdi.search.js
 -- ftd.image:
 src: $assets.files.assets.copy.svg
 width.fixed.px: 36
-background.solid: #FFDB58
+background.solid: #e98f24
 id: copyLink
 classes: share-option
 css: [$assets.files.hdi.style.css]
@@ -160,7 +160,7 @@ js: $assets.files.hdi.search.js
 -- ftd.image:
 src: $assets.files.assets.whatsapp.svg
 width.fixed.px: 36
-background.solid: #006ca5
+background.solid: #0bd146
 id: whatsappShare
 classes: share-option
 css: [$assets.files.hdi.style.css]
@@ -169,7 +169,7 @@ js: $assets.files.hdi.search.js
 -- ftd.image:
 src: $assets.files.assets.game.svg
 width.fixed.px: 36
-background.solid: #37fd12
+background.solid: #103e7c
 id: copyLink
 classes: share-option
 css: [$assets.files.hdi.style.css]
