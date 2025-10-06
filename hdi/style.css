@@ -436,7 +436,7 @@ body, .container, input, button, .result {
   background-color: #fff;
   color: #000;
   z-index: 1000;
-  max-height: 200px;
+  max-height: 156px;
   overflow-y: scroll; /* scrolling enabled */
   width: 100%;
   box-sizing: border-box;
