@@ -71,7 +71,7 @@ align-content: center
 css: [$assets.files.hdi.style.css]
 
 -- ftd.text: Start Game
-link: https://bin-it-right.vercel.app/game/rwa/
+link: https://bin-it-right.vercel.app/game/hdi/rwa/
 classes: green-btn
 
 -- end: ftd.column
