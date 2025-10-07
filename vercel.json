@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/hdi", "destination": "https://hdi.binitright.com", "permanent": true },
+    { "source": "/hdi/:path*", "destination": "https://hdi.binitright.com/:path*", "permanent": true }
+  ]
+}
