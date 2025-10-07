@@ -174,7 +174,7 @@ id: copyLink
 classes: share-option
 css: [$assets.files.hdi.style.css]
 js: $assets.files.hdi.search.js
-link: https://www.binitright.com/hdi/
+link: https://hdi.binitright.com/
 
 -- end: ftd.column
 
