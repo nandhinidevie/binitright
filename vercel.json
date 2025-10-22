@@ -1,6 +1,8 @@
 {
   "redirects": [
     { "source": "/hdi", "destination": "https://hdi.binitright.com", "permanent": true },
-    { "source": "/hdi/:path*", "destination": "https://hdi.binitright.com/:path*", "permanent": true }
-  ]
+    { "source": "/hdi/:path*", "destination": "https://hdi.binitright.com/:path*", "permanent": true },
+    { "source": "/amazon", "destination": "https://amazon.binitright.com/", "permanent": true },
+    { "source": "/amazon/:path*", "destination": "https://amazon.binitright.com/:path*", "permanent": true }
+  ]
 }
