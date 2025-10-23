@@ -71,7 +71,7 @@ align-content: center
 css: [$assets.files.hdi.style.css]
 
 -- ftd.text: Start Game
-link: /game/rwa/
+link: https://hdi.binitright.com/game/rwa
 classes: green-btn
 
 -- end: ftd.column
