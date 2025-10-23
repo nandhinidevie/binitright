@@ -68,7 +68,7 @@ html, body {
   letter-spacing: -0.01em;
 }
 
-/* Body & smaller text: Montserrat */
+/* Body & smaller text: Mulish */
 body, .container, input, button, .result {
   font-weight: 400;
 }
@@ -173,7 +173,8 @@ body, .container, input, button, .result {
   border: none;                /* no border */
   padding: 12px 24px;          /* spacing */
   border-radius: 8px;          /* rounded corners */
-  font-size: 16px;             /* text size */
+  font-size: 24px;             /* text size */
+  font-family: "Mulish", sans-serif;
   font-weight: 400;            /* semi-bold */
   cursor: pointer;             /* pointer cursor */
   text-align: center;          /* center text */
@@ -393,7 +394,7 @@ body, .container, input, button, .result {
 
 
 .tip {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   margin: 4px 0;

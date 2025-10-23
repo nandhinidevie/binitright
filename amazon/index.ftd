@@ -8,7 +8,7 @@ inset: $ds.spaces.inset-square.zero
 background.solid: #ffffff
 align-content: center
 spacing: $ds.spaces.vertical-gap.space-between
-inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
 document-image: https://i.postimg.cc/RVW94N50/Size-Large-Brand-amazon.png
 
 Play our custom Bin It Right game and learn waste segregation the fun way.
@@ -19,7 +19,7 @@ spacing.fixed.px: 50
 spacing.fixed.px if { ftd.device == "mobile" }: 24
 
 -- ftd.image:
-src: $assets.files.assets.amazon.amazon.svg
+src: $assets.files.assets.amazon.amazon_logo.svg
 width.fixed.px if { ftd.device == "mobile" }: 110
 width.fixed.px: 160
 
@@ -66,7 +66,7 @@ align-content: center
 css: [$assets.files.amazon.style.css]
 
 -- ftd.text: Start Game
-link: https://amazon.binitright.com/game/amazon-test
+link: https://amazon.binitright.com/game/amazon-test/
 classes: mustard-btn
 
 -- end: ftd.column
