@@ -9,7 +9,7 @@ background.solid: #ffffff
 align-content: center
 spacing: $ds.spaces.vertical-gap.space-between
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
-document-image: https://i.postimg.cc/XJt7tnVX/UNWASTE-LOGO.png
+document-image: https://i.postimg.cc/RVW94N50/Size-Large-Brand-amazon.png
 
 Play our custom Bin It Right game and learn waste segregation the fun way.
 
@@ -19,9 +19,9 @@ spacing.fixed.px: 50
 spacing.fixed.px if { ftd.device == "mobile" }: 24
 
 -- ftd.image:
-src: $assets.files.assets.hasiru-dala.unwaste-logo.png
+src: $assets.files.assets.amazon.amazon.svg
 width.fixed.px if { ftd.device == "mobile" }: 110
-width.fixed.px: 183
+width.fixed.px: 160
 
 -- end: ftd.row
 
@@ -33,19 +33,19 @@ spacing.fixed.px: 24
 -- end: ftd.column
 
 -- ftd.column:
-margin-vertical.px: 100
+margin-bottom.px: 100
 width.fixed.px if { ftd.device != "mobile" }: 450
 width: fill-container
 spacing.fixed.px: 24
 align-content: center
-css: [$assets.files.hdi.style.css]
+css: [$assets.files.amazon.style.css]
 classes: container
 
 
 -- ftd.text: Bin It Right
 classes: h1
 
--- ftd.text: Learn waste segregation the fun way
+-- ftd.text: Welcome to the beta version of our waste-sorting game.
 classes: tagline
 
 -- cta:
@@ -63,11 +63,11 @@ color: #000000
 
 -- ftd.column:
 align-content: center
-css: [$assets.files.hdi.style.css]
+css: [$assets.files.amazon.style.css]
 
 -- ftd.text: Start Game
 link: https://amazon.binitright.com/game/amazon-test/
-classes: green-btn
+classes: mustard-btn
 
 -- end: ftd.column
 
