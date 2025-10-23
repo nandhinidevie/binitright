@@ -1,0 +1,74 @@
+
+-- lets-ga.setup:
+
+-- ds.page: Bin It Right x Amazon
+theme-switcher: false
+fastn-badge: false
+inset: $ds.spaces.inset-square.zero
+background.solid: #ffffff
+align-content: center
+spacing: $ds.spaces.vertical-gap.space-between
+inset if { ftd.device == "mobile" }: $ds.spaces.inset-wide.medium
+document-image: https://i.postimg.cc/XJt7tnVX/UNWASTE-LOGO.png
+
+Play our custom Bin It Right game and learn waste segregation the fun way.
+
+-- ftd.row:
+margin-top.px: 24
+spacing.fixed.px: 50
+spacing.fixed.px if { ftd.device == "mobile" }: 24
+
+-- ftd.image:
+src: $assets.files.assets.hasiru-dala.unwaste-logo.png
+width.fixed.px if { ftd.device == "mobile" }: 110
+width.fixed.px: 183
+
+-- end: ftd.row
+
+-- ftd.column:
+width: fill-container
+align-content: top-center
+spacing.fixed.px: 24
+
+-- end: ftd.column
+
+-- ftd.column:
+margin-vertical.px: 100
+width.fixed.px if { ftd.device != "mobile" }: 450
+width: fill-container
+spacing.fixed.px: 24
+align-content: center
+css: [$assets.files.hdi.style.css]
+classes: container
+
+
+-- ftd.text: Bin It Right
+classes: h1
+
+-- ftd.text: Learn waste segregation the fun way
+classes: tagline
+
+-- cta:
+
+-- end: ftd.column
+
+-- ds.copy-small: ©2025 Good Game Company. All rights reserved. 
+color: #000000
+
+-- end: ds.page
+
+
+
+-- component cta:
+
+-- ftd.column:
+align-content: center
+css: [$assets.files.hdi.style.css]
+
+-- ftd.text: Start Game
+link: https://bin-it-right.vercel.app/game/hdi-rwa/
+classes: green-btn
+
+-- end: ftd.column
+
+-- end: cta
