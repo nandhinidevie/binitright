@@ -14,7 +14,7 @@ document-image: https://i.ibb.co/p91ML6H/amazon-og-image.png
 Welcome to the beta version of our waste-sorting game.
 
 -- ftd.row:
-margin-top.px: 24
+margin-top.px if { ftd.device != "mobile" }: 12 
 spacing.fixed.px: 50
 spacing.fixed.px if { ftd.device == "mobile" }: 24
 
