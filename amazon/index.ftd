@@ -9,9 +9,9 @@ background.solid: #ffffff
 align-content: center
 spacing: $ds.spaces.vertical-gap.space-between
 inset if { ftd.device == "mobile" }: $ds.spaces.inset-square.medium
-document-image: https://i.postimg.cc/RVW94N50/Size-Large-Brand-amazon.png
+document-image: https://i.ibb.co/p91ML6H/amazon-og-image.png
 
-Play our custom Bin It Right game and learn waste segregation the fun way.
+Welcome to the beta version of our waste-sorting game.
 
 -- ftd.row:
 margin-top.px: 24
