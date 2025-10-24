@@ -173,7 +173,7 @@ body, .container, input, button, .result {
   border: none;                /* no border */
   padding: 12px 24px;          /* spacing */
   border-radius: 8px;          /* rounded corners */
-  font-size: 24px;             /* text size */
+  font-size: 18px;             /* text size */
   font-family: "Mulish", sans-serif;
   font-weight: 400;            /* semi-bold */
   cursor: pointer;             /* pointer cursor */
@@ -472,3 +472,4 @@ body, .container, input, button, .result {
 .autocomplete-item strong {
   font-weight: bold;
 }
+
