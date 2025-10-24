@@ -13,7 +13,7 @@
 
   /* Neutrals */
   --bg:           #ffffff;
-  --text-strong:  #131A22;
+  --text-strong:  #171717;
   --text-body:    #232F3E;
   --muted-border: #e5e7eb;
 
@@ -31,7 +31,7 @@
   --yellow-800:#e8ae11;
 
   --black-50:  rgba(17,17,17,0.10);
-  --black-900: #131A22;
+  --black-900: #171717;
 
   --shadow-sm: 0 2px 6px rgba(2,6,23,0.06);
   --shadow-md: 0 6px 18px rgba(0,2,5,0.14);
@@ -472,4 +472,5 @@ body, .container, input, button, .result {
 .autocomplete-item strong {
   font-weight: bold;
 }
+
 
