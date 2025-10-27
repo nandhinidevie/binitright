@@ -20,7 +20,7 @@ spacing.fixed.px if { ftd.device == "mobile" }: 24
 
 -- ftd.image:
 src: $assets.files.assets.amazon.amazon_logo.svg
-width.fixed.px if { ftd.device == "mobile" }: 200
+width.fixed.px if { ftd.device == "mobile" }: 180
 width.fixed.px: 270
 
 -- end: ftd.row
