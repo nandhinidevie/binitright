@@ -5,7 +5,7 @@
 
 :root {
   /* Brand */
-  --brand-mustard: #ffa41c;  /* primary green for light backgrounds */
+  --brand-mustard: #ff6200;  /* primary green for light backgrounds */
   --brand-blue:  #2162a1;  /* primary blue for dark backgrounds (used sparingly on light UI) */
   --brand-gray:  #f2f2f2;  /* body/content on light bg */
   --brand-yellow:#e8ae11;  /* secondary (use only if necessary) */
@@ -472,5 +472,6 @@ body, .container, input, button, .result {
 .autocomplete-item strong {
   font-weight: bold;
 }
+
 
 
