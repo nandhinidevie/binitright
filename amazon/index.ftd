@@ -1,3 +1,4 @@
+-- import: bin-it-right.fifthtry.site/ember-typography as fonts
 
 -- lets-ga.setup:
 
@@ -14,7 +15,7 @@ document-image: https://i.ibb.co/p91ML6H/amazon-og-image.png
 Welcome to the beta version of our waste-sorting game.
 
 -- ftd.row:
-margin-top.px if { ftd.device != "mobile" }: 12 
+margin-top.px if { ftd.device != "mobile" }: 24 
 spacing.fixed.px: 50
 spacing.fixed.px if { ftd.device == "mobile" }: 24
 
@@ -46,7 +47,9 @@ classes: container
 classes: h1
 
 -- ftd.text: Welcome to the beta version of our waste-sorting game.
-classes: tagline
+;;classes: tagline
+color: #000000
+role: $fonts.ember-copy-regular
 
 -- cta:
 
