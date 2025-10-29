@@ -1,0 +1,52 @@
+-- import: bin-it-right.fifthtry.site/assets as assets
+
+
+
+-- component ember-heading-tiny:
+caption text:
+ftd.color color: $ds.colors.text-strong
+ftd.text-style list style:
+optional string link:
+
+-- ftd.text: $ember-heading-tiny.text
+color: $ember-heading-tiny.color
+link: $ember-heading-tiny.link
+style: $ember-heading-tiny.style
+role: $heading-tiny-font
+
+-- end: ember-heading-tiny
+
+
+
+-- ftd.type heading-medium-font:
+line-height.px: 56
+size.px: 42
+letter-spacing.px: 0
+weight: 700
+font-family: $assets.fonts.Ember
+
+
+
+
+-- component ember-copy-regular:
+caption text:
+ftd.color color: $ds.colors.text-strong
+ftd.text-style list style:
+optional string link:
+
+-- ftd.text: $ember-copy-regular.text
+color: $ember-copy-regular.color
+link: $ember-copy-regular.link
+style: $ember-copy-regular.style
+role: $copy-regular-font
+
+-- end: ember-copy-regular
+
+
+
+-- ftd.type copy-regular-font:
+line-height.px: 28
+size.px: 24
+letter-spacing.px: 0
+weight: 400
+font-family: $assets.fonts.Ember

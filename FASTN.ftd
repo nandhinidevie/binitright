@@ -27,3 +27,64 @@ provided-via: bin-it-right.fifthtry.site/lets-ga
 -- fastn.auto-import: bin-it-right.fifthtry.site/components
 -- fastn.auto-import: bin-it-right.fifthtry.site/components/cs as cs
 -- fastn.auto-import: bin-it-right.fifthtry.site/components/record as rd
+
+
+-- fastn.font: Ember
+style: normal
+weight: 700
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_Bd.ttf
+
+-- fastn.font: Ember
+style: italic
+weight: 700
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_BdIt.ttf
+
+-- fastn.font: Ember
+style: normal
+weight: 800
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_He.ttf
+
+-- fastn.font: Ember
+style: italic
+weight: 800
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_HeIt.ttf
+
+-- fastn.font: Ember
+style: normal
+weight: 400
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_Lt.ttf
+
+-- fastn.font: Ember
+style: italic
+weight: 400
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_LtIt.ttf
+
+-- fastn.font: Ember
+style: normal
+weight: 400
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_Rg.ttf
+
+-- fastn.font: Ember
+style: italic
+weight: 400
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_RgIt.ttf
+
+-- fastn.font: Ember
+style: normal
+weight: 100
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_Th.ttf
+
+-- fastn.font: Ember
+style: italic
+weight: 100
+truetype: -/bin-it-right.fifthtry.site/fonts/AmazonEmber_ThIt.ttf
+
+-- fastn.font: Ember
+style: normal
+weight: 500
+truetype: -/bin-it-right.fifthtry.site/fonts/Amazon-Ember-Medium.ttf
+
+-- fastn.font: Ember
+style: italic
+weight: 500
+truetype: -/bin-it-right.fifthtry.site/fonts/Amazon-Ember-MediumItalic.ttf
