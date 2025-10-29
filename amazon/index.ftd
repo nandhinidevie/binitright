@@ -15,14 +15,15 @@ document-image: https://i.ibb.co/p91ML6H/amazon-og-image.png
 Welcome to the beta version of our waste-sorting game.
 
 -- ftd.row:
-margin-top.px if { ftd.device != "mobile" }: 24 
+margin-top.px if { ftd.device != "mobile" }: 36
 spacing.fixed.px: 50
 spacing.fixed.px if { ftd.device == "mobile" }: 24
 
 -- ftd.image:
 src: $assets.files.assets.amazon.amazon_logo.svg
 width.fixed.px if { ftd.device == "mobile" }: 180
-width.fixed.px: 270
+width.fixed.px: 200
+height.fixed.px: 100
 
 -- end: ftd.row
 
@@ -47,9 +48,7 @@ classes: container
 classes: h1
 
 -- ftd.text: Welcome to the beta version of our waste-sorting game.
-;;classes: tagline
-color: #000000
-role: $fonts.ember-copy-regular
+classes: tagline
 
 -- cta:
 
