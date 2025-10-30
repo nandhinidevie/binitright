@@ -742,10 +742,19 @@ function checkBin() {
     return pattern.test(k);
   });
 
-  if (matches.length === 0) {
-    showResult('<span style="color: black;">⚠️ Item not found in database. Please dispose responsibly!</span>', 'orange');
-    return;
-  }
+if (matches.length === 0) {
+  const msg = `
+    <span style="color: black;">⚠️ Item not found. Suggest this item</span><br><br>
+
+    <a href="mailto:meenukumari@gmail.com,meenu@vitamin-d.in?subject=${encodeURIComponent('Unknown Item Report')}&body=${encodeURIComponent('Hi,\n\nI found an item that is not listed in the database:\n[Please enter item name here]\n\nThanks!')}"
+       style="display:inline-block; padding:8px 14px; background:#158538; color:white; border-radius:6px; text-decoration:none; font-weight:600;">
+      Send Item
+    </a>
+  `;
+
+  showResult(msg, 'orange');
+  return;
+}
 
   let tipsToShow = []; // collect tips across all matches
 
