@@ -744,11 +744,11 @@ function checkBin() {
 
 if (matches.length === 0) {
   const msg = `
-    <span style="color: black;">⚠️ Item not found. Suggest this item</span><br><br>
+    <span style="color: black;">⚠️ Item not found in the database</span><br><br>
 
     <a href="mailto:info@hasirudalainnovations.com,binitright.n@gmail.com?subject=${encodeURIComponent('Unknown Item Report')}&body=${encodeURIComponent('Hi,\n\nI found an item that is not listed in the database:\n[Please enter item name here]\n\nThanks!')}"
        style="display:inline-block; padding:8px 14px; background:#158538; color:white; border-radius:6px; text-decoration:none; font-weight:600;">
-      Send Item
+      Suggest Item
     </a>
   `;
 
