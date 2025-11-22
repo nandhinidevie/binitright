@@ -649,6 +649,7 @@ function createAutocomplete(value) {
 
     suggestion.addEventListener('click', () => {
       input.value = item;
+      trackSearchEvent(item, true);
       closeAutocomplete();
       checkBin(); // trigger your existing check logic
     });
@@ -734,6 +735,21 @@ function clearResults() {
   tipArea.style.display = 'none'; // hide tip when results are cleared
 }
 
+
+// Track search event in Google Analytics
+function trackSearchEvent(keyword, found) {
+  if (typeof gtag === "function") {
+    gtag("event", "item_search", {
+      search_term: keyword,
+      item_found: found,     // true or false
+      event_category: "Search",
+      event_label: keyword
+    });
+  }
+}
+
+
+
 function checkBin() {
   clearResults();
   const q = input.value.trim().toLowerCase();
@@ -748,7 +764,10 @@ function checkBin() {
     return pattern.test(k);
   });
 
+  trackSearchEvent(q, true);
+
 if (matches.length === 0) {
+  trackSearchEvent(q, false);
   const msg = `
     <span style="color: black;">⚠️ Item not found in the database</span><br><br>
 
