@@ -1,7 +1,7 @@
 
 -- lets-ga.setup:
 
--- ds.page: Bin It Right
+-- ds.page: Bin It Right x HDI
 theme-switcher: false
 fastn-badge: false
 inset: $ds.spaces.inset-square.zero
