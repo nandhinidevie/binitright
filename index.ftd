@@ -16,13 +16,13 @@ align: center
 -- ds.row:
 if: { ftd.device != "mobile" }
 
--- ds.primary-button: Play game (Easy)
+/-- ds.primary-button: Play game (Easy)
 link: https://binitright.com/version-0/
 
--- ds.primary-button: Play game (Medium)
+-- ds.primary-button: Play game
 link: https://bin-it-right.vercel.app/game/play/
 
--- ds.primary-button: Play game (Hard)
+/-- ds.primary-button: Play game (Hard)
 link: https://binitright.com/wework/
 
 -- end: ds.row
@@ -31,13 +31,13 @@ link: https://binitright.com/wework/
 if: { ftd.device == "mobile" }
 inset: $ds.spaces.inset-square.zero
 
--- ds.primary-button: Play game (Easy)
+/-- ds.primary-button: Play game (Easy)
 link: https://binitright.com/version-0/
 
--- ds.primary-button: Play game (Medium)
+-- ds.primary-button: Play game
 link: https://bin-it-right.vercel.app/game/play/
 
--- ds.primary-button: Play game (Hard)
+/-- ds.primary-button: Play game (Hard)
 link: https://binitright.com/wework/
 
 -- end: ds.column
@@ -195,7 +195,7 @@ MSW_AnnualReport_2020-21.pdf
 6) https://shorturl.at/oyBft
 
 -- ds.primary-button: Play Game
-link: https://binitright.com/
+link: https://www.binitright.com/play/medium/
 
 -- end: ds.column
 
