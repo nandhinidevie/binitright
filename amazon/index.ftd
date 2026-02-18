@@ -1,7 +1,5 @@
 -- import: bin-it-right.fifthtry.site/ember-typography as fonts
 
--- lets-ga.setup:
-
 -- ds.page: Bin It Right x Amazon
 theme-switcher: false
 fastn-badge: false
